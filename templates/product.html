@@ -1,0 +1,136 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Product</title>
+    <link rel="stylesheet" href="{% static 'nav.css' %}">
+    <link rel="stylesheet" href="{% static 'product.css' %}">
+    <link rel="stylesheet" href="{% static '/fontawesome-free-5.15.3-web/CSS/ALL.CSS' %}">
+    <script src="{% static 'sidenav.js' %}" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <div class="left-side">
+                <a href="#" class="logo"><img src="{% static 'images/logob.png' %}" alt=""></a>
+            </div>
+            <div class="right-side">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Catergories</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">FAQ</a></li>
+                </ul>
+                <div class="icons">
+                    <a href="#" class="notifBtn" title="My Notifications"> <i class="fas fa-bell"></i></a>
+                    <a href="#" class="userBtn" title="Me"> <i class="fas fa-user"></i></a>
+                </div>
+            </div>
+        </nav>
+        <div class="buyproduct">
+            <div class="part product-image">
+                <div class="main-image">
+                    <img src="{% static './images/slippers.jpeg' %}" alt="">
+                    <div class="image-roll">
+                        <div class="image img1">
+                            <img src="{% static './images/slippers.jpeg' %}" alt="">
+                        </div>
+                        <div class="image img1">
+
+                        </div>
+                        <div class="image img1">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="part product-details">
+                <h1>Female Slippers</h1>
+                <div class="other-details">
+                    <div class="price">
+                        <h3>
+                            <div class="currency">N</div>1300</h3>
+                    </div>
+                    <div class="rating">
+                        0.0
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="quantity">
+                    <button class="minus">-</button>
+                    <div class="no"></div>
+                    <button class="plus">+</button>
+                </div>
+                <div class="reviews">
+                    <div class="review-overflow">
+                        <div class="all-reviews">
+                            no reviews
+                        </div>
+                    </div>
+                    <button class="addReview"><i class="fas fa-pen"></i>Add a Review</button>
+                </div>
+                <div class="buttons">
+                    <button class="buyBtn">Buy <div class="currency">N</div><div class="pay"></div></button>
+                    <button class="cartBtn"><i class="fas fa-plus"></i> Add to Cart</button>
+                </div>
+            </div>
+            <div class="write-review-bg">
+                <div class="write-review">
+                    <span class="closeBtn"><i class="fas fa-times"></i></span>
+                    <div class="rate">
+                        <div class="star s1"></div>
+                        <div class="star s2"></div>
+                        <div class="star s3"></div>
+                        <div class="star s4"></div>
+                        <div class="star s5"></div>
+                    </div>
+                    <textarea name="" class="write" id="" cols="30" rows="10" placeholder="Tell Us Something(Optional)"></textarea>
+                    <button>Add Review</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="sidebar">
+            <div class="side-sec general">
+                <i class="fas fa-user"></i>
+                <h1><span>Omaga</span><span>Owoicho</span></h1>
+                <p>omagaowi@gmail.com</p>
+                <div class="buttons">
+                    <button class="logoutbtn1"><i class="fas fa-sign-out-alt"></i><a href="/logout">Logout</a></button>
+                     <button class="deletebtn1"><i class="fas fa-cog"></i><a href="/settings">Account Settings</a></button>
+                </div>
+               <button class="dashboardBtn">Seller Dashboard <i class="fas fa-external-link-alt"></i></button>
+            </div>
+            <div class="side-sec notifications">
+                <h1>Notifications</h1>
+                <div class="notification-area">
+                    <p>No notifications</p>
+                </div>
+            </div>
+            <div class="side-sec cart">
+                <h1>Cart</h1>
+                <div class="cart-area">
+                    <p>No Items</p>
+                </div>
+            </div>
+            <div class="side-sec history">
+                <h1>Shopping History</h1>
+                <div class="history-area">
+                    <p>No Items</p>
+                </div>
+            </div>
+            <a href="#" class="sideClose"><i class="fas fa-times"></i></a>
+            <div class="acc-options">
+                <a href="#" class="sideCart" title="Cart"><i class="fas fa-shopping-bag"></i></a>
+                <a href="#" class="sideHistory" title="shopping History"><i class="fas fa-clock"></i></a>
+                <a href="#" class="sideNotif" title="My Notifications"><i class="fas fa-bell"></i></a>
+            </div>
+        </div> -->
+    <script src="{% static '/buyproduct.js' %}"></script>
+</body>
+
+</html>

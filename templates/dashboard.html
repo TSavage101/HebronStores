@@ -1,0 +1,95 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'fontawesome-free-5.15.3-web/CSS/ALL.CSS' %}">
+    <link rel="stylesheet" href="{% static 'settings.css' %}">
+    <title>Seller Dashboard</title>
+</head>
+
+<body>
+    <div class="logo1 logo2 createlogo1 createlogo2"></div>
+
+
+    <div class="container">
+        <div class="navoptions">
+            <a href="/" title="Back To Home"><i class="fas fa-home"></i></a>
+            <a href="#" title="Dark Mode" id="darkbtn"><i id="darkicon" class="fas fa-moon"></i></a>
+        </div>
+        <div class="settings">
+            <div class="sidebar">
+                <ul>
+                    <li class="generalbtn active">
+                        <div class="icon"><i class="fas fa-home"></i></div>
+                        </i>
+                        <p>General</p>
+                    </li>
+                    <li class="passwordbtn">
+                        <div class="icon"><i class="fas fa-clock"></i></div>
+                        <p>Orders</p>
+                    </li>
+                    <li class="searchbtn">
+                        <div class="icon"><i class="fas fa-dollar-sign"></i></div>
+                        </i>
+                        <p>Sales</p>
+                    </li>
+                    <li class="productsBtn">
+                        <div class="icon"><i class="fas fa-shopping-bag"></i></div>
+                        </i>
+                        <p>My Products</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="main-settings">
+                <div class="setting general active">
+                    <div class="total-sales">
+                        <div class="figure">
+                            <h1><span class="currency">N</span>00.00</h1>
+                        </div>
+                        <p>Total Sales</p>
+                    </div>
+                    <div class="other-stats">
+                        <div class="rating">
+                            <h4>0.0<i class="fas fa-star"></i></h4>
+                            <p>Average Rating</p>
+                        </div>
+                        <div class="total-products">
+                            <h4>00</h4>
+                            <p>Total Products</p>
+                        </div>
+                        <div class="orders">
+                            <h4>00</h4>
+                            <p>Pending Orders</p>
+                        </div>
+                        <div class="solds">
+                            <h4>00</h4>
+                            <p>Products Sold</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="setting password-window">
+                    <p>You don't have any orders</p>
+
+                </div>
+                <div class="setting search">
+                    <p>You have'nt made any sales</p>
+                </div>
+                <div class="setting products">
+                    <div class="none">
+                        <i class="fas fa-heart-broken"></i>
+                        <h1>You don't have any products</h1>
+                        <button><i class="fas fa-plus"></i>Add Product</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'settings.js' %}"></script>
+</body>
+
+</html>

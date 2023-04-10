@@ -1,0 +1,350 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+
+}
+
+body{
+    width: 100vw;
+    height: auto;
+    overflow-x: hidden;
+}
+
+.container{
+    width: 100vw;
+    position: relative;
+    height: auto;
+    /* background: #ddd; */
+}
+
+
+
+
+.top-picks{
+    width: 100vw;
+    height: calc(100vh - 75px);
+    /* background: #c1c1c1; */
+    /* border-bottom: 2px solid black; */
+}
+.all-products{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search{
+    position: relative;
+    top: 70px;
+    height: 45px;
+    width: 320px;
+    display: flex;
+    /* border: 3px solid #b82b84; */
+    background: #fff;
+}
+
+.seachbar{
+    width: 86%;
+    border: none;
+    font-size: 20px;
+    padding-left: 5px;
+    background: none;
+    outline: none;
+    height: 100%;
+}
+
+.searchBtn{
+    width: 14%;
+    border: none;
+    color: #b82b84;
+    cursor: pointer;
+    outline: none;
+    background: none;
+    font-size: 18px;
+    height: 100%;
+}
+
+.cards{
+    width: 100vw;
+    padding: 30px;
+    padding-top: 90px;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    grid-gap: 30px;
+    background: #f1f1f1;
+}
+
+
+.card{
+    width: 100%;
+    height: 330px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    /* margin: 20px; */
+    color: #3c3c3c;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.image{
+    width: 95%;
+    height: 220px;
+    margin-top: 10px;
+    overflow: hidden;
+    background: #3c3c3c;
+}
+
+
+
+.image img{
+    width: 100%;
+    transition: all 0.8s ease;
+    height: 100%;
+}
+
+.image:hover img{
+    transform: scale(2);
+}
+
+.card a{
+    color: #3c3c3c;
+    text-decoration: none;
+}
+
+.card a:hover{
+  text-decoration: underline;
+}
+
+.card h3{
+margin-top: 10px;
+ font-size: 20px;
+}
+
+.card .currency{
+    text-decoration: line-through;
+}
+
+.card button{
+    margin-top: 10px;
+    width: 170px;
+    background: none;
+    cursor: pointer;
+    border: 2px solid #b82b84;
+    height: 26px;
+}
+
+.card .fa-plus{
+    margin-right: 4px;
+    color: #b82b84;
+}
+
+.card button:hover{
+    background: #b82b84;
+    color: #ebebeb;
+}
+
+
+.card button:hover i{
+    background: #b82b84;
+    color: #ebebeb;
+}
+
+.sidebar{
+    position: fixed;
+    width: 350px;
+    height: 100vh;
+    top: 0px;
+    z-index: 1;
+    right: 0px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15),
+    0 3px 6px rgba(0, 0, 0, 0.15);
+    margin-right: -350px;
+    transition: all 0.7s ease;
+}
+
+.sidebar.show{
+    margin-right: 0;
+}
+
+.sidebar .sideClose{
+    position: absolute;
+    top: 10px;
+    font-size: 23px;
+    left: 10px;
+    color: #ff7070;
+}
+
+.side-sec{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    height: 100%;
+    color: #3c3c3c;
+}
+
+.general{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.general .fa-user{
+    font-size: 180px;
+    margin-bottom: 10px;
+}
+
+.general h1{
+    font-size: 40px;
+}
+
+.general h1 span{
+    margin: 0px 5px;
+}
+
+.general p{
+    font-size: 20px;
+    color: #b82b84;
+}
+
+.buttons{
+   margin-top: 20px;
+   display: flex;
+}
+
+.buttons button{
+    padding: 7px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-right: 5px;
+    border: 2px solid #b82b84;
+    border-radius: 7px;
+    background: transparent;
+    color: var(--mn-text);
+    transition: all 0.8s ease;
+    display: flex;
+}
+
+.buttons button i{
+    margin-left: 10px;
+}
+
+.buttons button a{
+    text-decoration: none;
+    color: #3c3c3c;
+}
+
+.acc-options{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.acc-options a{
+    font-size: 23px;
+    margin: 0px 7px;
+    color: #b82b84;
+}
+
+.dashboardBtn{
+    position: absolute;
+    bottom: 20px;
+    padding: 6px;
+    font-size: 15px;
+    background: none;
+    cursor: pointer;
+    outline: none;
+    border: 2px solid #b82b84;
+}
+
+.notifications, .cart, .history{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.notifications h1, .cart h1, .history h1{
+    font-size: 40px;
+    position: relative;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    top: 13%;
+}
+
+.notification-area, .cart-area, .history-area{
+    position: relative;
+    top: 15%;
+    width: 97%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: hidden;
+    background: #ebebeb;
+}
+
+.side-sec{
+    display: none;
+}
+
+.general.show{
+    display: flex;
+}
+
+.notifications.show{
+    display: flex;
+}
+
+.cart.show{
+    display: flex;
+}
+
+.history.show{
+    display: flex;
+}
+
+
+.flotingcartBtn{
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    /* background: #b82b84; */
+    width: 65px;
+    height: 65px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15),
+    0 3px 6px rgba(0, 0, 0, 0.15);
+    color: #b82b84;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 7px;
+    font-size: 30px;
+}
+
+.right-side ul li:nth-child(1) a{
+    color: #b82b84;
+}
+
+.right-side ul li:nth-child(1) a:after{
+    width: 15px;
+    opacity: initial;
+    
+}
+
+.right-side ul li a:hover{
+    color: #b82b84;
+}
+
+.right-side ul li a:hover::after{
+    width: 100%;
+    opacity: initial;
+}

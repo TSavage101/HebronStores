@@ -1,0 +1,97 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catergories</title>
+    <link rel="stylesheet" href="{% static 'nav.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome-free-5.15.3-web/CSS/ALL.CSS' %}">
+    <link rel="stylesheet" href="{% static 'catergories.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <div class="left-side">
+                <a href="#" class="logo"><img src="{% static 'images/logob.png' %}" alt=""></a>
+            </div>
+            <div class="right-side">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Catergories</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">FAQ</a></li>
+                </ul>
+                <div class="icons">
+                    <a href="#" class="notifBtn" title="My Notifications"> <i class="fas fa-bell"></i></a>
+                    <a href="#" class="userBtn" title="Me"> <i class="fas fa-user"></i></a>
+                </div>
+            </div>
+        </nav>
+        <div class="catergories">
+            <div class="all">
+                <div class="catergory">
+                    <div class="scroll">
+                        <div class="image i1">
+                            <img src="{% static './images/food1.jpg' %}" alt="">
+                        </div>
+                        <div class="image i2">
+                            <img src="{% static './images/food2.jpg' %}" alt="">
+                        </div>
+                        <div class="image i3">
+                            <img src="{% static './images/food3.jpg' %}" alt="">
+                        </div>
+                    </div>
+                    <h1>Food</h1>
+                </div>
+                <div class="catergory">
+                    <div class="scroll">
+                        <div class="image i1">
+                            <img src="{% static './images/tech1.jpg' %}" alt="">
+                        </div>
+                        <div class="image i2">
+                            <img src="{% static './images/tech2.jpg' %}" alt="">
+                        </div>
+                        <div class="image i3">
+                            <img src="{% static './images/tech3.jpg' %}" alt="">
+                        </div>
+                    </div>
+                    <h1>Gadgets</h1>
+                </div>
+                <div class="catergory">
+                    <div class="scroll">
+                        <div class="image i1">
+                            <img src="{% static './images/fashion1.jpg' %}" alt="">
+                        </div>
+                        <div class="image i2">
+                            <img src="{% static './images/fashion2.jpg' %}" alt="">
+                        </div>
+                        <div class="image i3">
+                            <img src="{% static './images/fashion3.jpg' %}" alt="">
+                        </div>
+                    </div>
+                    <h1>Fashion</h1>
+                </div>
+                <div class="catergory">
+                    <div class="scroll">
+                        <div class="image i1">
+                            <img src="{% static './images/cosmetics1.jpg' %}" alt="">
+                        </div>
+                        <div class="image i2">
+                            <img src="{% static './images/cosmetics2.jpg' %}" alt="">
+                        </div>
+                        <div class="image i3">
+                            <img src="{% static './images/cosmetics3.jpg' %}" alt="">
+                        </div>
+                    </div>
+                    <h1>Cosmetics</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'catergories.js' %}"></script>
+</body>
+
+</html>

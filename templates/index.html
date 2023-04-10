@@ -1,0 +1,148 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hebron Store</title>
+    <link rel="stylesheet" href="{% static 'nav.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome-free-5.15.3-web/CSS/ALL.CSS' %}">
+    <script src="{% static 'home.js' %}" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <div class="left-side">
+                <a href="#" class="logo"><img src="{% static 'images/logob.png' %}" alt=""></a>
+            </div>
+            <div class="right-side">
+                <ul>
+                    <li class="home"><a href="">Home</a></li>
+                    <li><a href="">Catergories</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">FAQ</a></li>
+                </ul>
+                <div class="icons">
+                    <a href="#" class="notifBtn" title="My Notifications"> <i class="fas fa-bell"></i></a>
+                    <a href="#" class="userBtn" title="Me"> <i class="fas fa-user"></i></a>
+                </div>
+            </div>
+        </nav>
+        <div class="top-picks">
+
+        </div>
+        <div class="all-products">
+            <div class="search">
+                <input type="text" placeholder="Search..." class="seachbar">
+                <button class="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="image">
+                        <img src="{% static '/images/bedsheet.jpg' %}" alt="">
+                    </div>
+                    <a href="#">
+                        <h3>Multicolour Bedsheet</h3>
+                    </a>
+                    <p><span class="currency">N</span>2500</p>
+                    <button class="addCart"><i class="fas fa-plus"></i>Add To Cart</button>
+                </div>
+                <div class="card">
+                    <div class="image">
+                        <img src="{% static '/images/slippers.jpeg' %}" alt="">
+                    </div>
+                    <a href="#">
+                        <h3>Female Slippers</h3>
+                    </a>
+                    <p><span class="currency">N</span>1200</p>
+                    <button class="addCart"><i class="fas fa-plus"></i>Add To Cart</button>
+                </div>
+                <div class="card">
+                    <div class="image">
+                        <img src="{% static '/images/1.jpg' %}" alt="">
+                    </div>
+                    <a href="#">
+                        <h3>Orange Loafers</h3>
+                    </a>
+                    <p><span class="currency">N</span>11000</p>
+                    <button class="addCart"><i class="fas fa-plus"></i>Add To Cart</button>
+                </div>
+                <div class="card">
+                    <div class="image">
+                        <img src="{% static '/images/1 (1).jpg' %}" alt="">
+                    </div>
+                    <a href="#">
+                        <h3>Female Flats</h3>
+                    </a>
+                    <p><span class="currency">N</span>8500</p>
+                    <button class="addCart"><i class="fas fa-plus"></i>Add To Cart</button>
+                </div>
+                <div class="card">
+                    <div class="image">
+                        <img src="{% static '/images/necklace.jpeg' %}" alt="">
+                    </div>
+                    <a href="#">
+                        <h3>Silver Necklace</h3>
+                    </a>
+                    <p><span class="currency">N</span>3000</p>
+                    <button class="addCart"><i class="fas fa-plus"></i>Add To Cart</button>
+                </div>
+                <div class="card">
+                    <div class="image">
+                        <img src="{% static '/images/lipstick.JPG' %}" alt="">
+                    </div>
+                    <a href="#">
+                        <h3>Lipsticks</h3>
+                    </a>
+                    <p><span class="currency">N</span>900</p>
+                    <button class="addCart"><i class="fas fa-plus"></i>Add To Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="flotingcartBtn" title="Cart">
+            <i class="fas fa-shopping-bag"></i>
+        </button>
+    </div>
+    <div class="sidebar">
+        <div class="side-sec general">
+            <i class="fas fa-user"></i>
+            <h1><span>Omaga</span><span>Owoicho</span></h1>
+            <p>omagaowi@gmail.com</p>
+            <div class="buttons">
+                <button class="logoutbtn1"><i class="fas fa-sign-out-alt"></i><a href="/logout">Logout</a></button>
+                <button class="deletebtn1"><i class="fas fa-cog"></i><a href="/settings">Account Settings</a></button>
+            </div>
+            <button class="dashboardBtn">Seller Dashboard <i class="fas fa-external-link-alt"></i></button>
+        </div>
+        <div class="side-sec notifications">
+            <h1>Notifications</h1>
+            <div class="notification-area">
+                <p>No notifications</p>
+            </div>
+        </div>
+        <div class="side-sec cart">
+            <h1>Cart</h1>
+            <div class="cart-area">
+                <p>No Items</p>
+            </div>
+        </div>
+        <div class="side-sec history">
+            <h1>Shopping History</h1>
+            <div class="history-area">
+                <p>No Items</p>
+            </div>
+        </div>
+        <a href="#" class="sideClose"><i class="fas fa-times"></i></a>
+        <div class="acc-options">
+            <a href="#" class="sideCart" title="Cart"><i class="fas fa-shopping-bag"></i></a>
+            <a href="#" class="sideHistory" title="shopping History"><i class="fas fa-clock"></i></a>
+            <a href="#" class="sideNotif" title="My Notifications"><i class="fas fa-bell"></i></a>
+        </div>
+    </div>
+</body>
+
+</html>

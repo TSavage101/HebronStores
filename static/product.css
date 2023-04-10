@@ -1,0 +1,341 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+nav{
+    position: fixed;
+    top: -60;
+    left: 0;
+    transition: all 0.5s ease;
+}
+
+nav:hover{
+    top: 0px;
+}
+
+
+.right-side ul li:nth-child(1) a{
+    color: #b82b84;
+}
+
+.right-side ul li:nth-child(1) a:after{
+    width: 15px;
+    opacity: initial;
+    
+}
+
+.right-side ul li a:hover{
+    color: #b82b84;
+}
+
+.right-side ul li a:hover::after{
+    width: 100%;
+    opacity: initial;
+}
+
+.container{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    height: 100vh;
+    background: #f1f1f1;
+}
+
+.buyproduct{
+    width: 800px;
+    position: relative;
+    height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+
+.part{
+    width: 45%;
+    height: 100%;
+}
+
+.product-image{
+    background: green;
+    position: relative;
+    height: 85%;
+}
+
+.product-details{
+    width: 55%;
+    color: #3c3c3c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background: red; */
+}
+
+.product-details h1{
+    font-size: 43px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.other-details{
+    width: 170px;
+    display: flex;
+    height: 37px;
+    background: #f1f1f1;
+}
+
+.price{
+    width: 72%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: blue; */
+}
+
+.price h3{
+    display: flex;
+}
+
+.currency{
+    text-decoration: line-through;
+}
+
+.price .currency{
+    margin-right: 3px;
+}
+
+.rating{
+    width: 28%;
+    /* border-left: 1px solid rgb(70, 70, 70); */
+    height: 100%;
+    background: #cecece;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.rating i{
+    font-size: 12px;
+}
+
+.quantity{
+    width: 110px;
+    display: flex;
+    margin-top: 10px;
+    height: 34px;
+    /* background: #f1f1f1; */
+}
+
+.quantity button{
+    width: 30%;
+    border: 1px solid black;
+    height: 100%;
+    cursor: pointer;
+    font-size: 25px;
+    background: #f1f1f1;
+}
+
+.quantity .no{
+    width: 40%;
+    height: 100%;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-image{
+    width: 100%;
+    height: 100%;
+}
+
+.main-image img{
+    width: 100%;
+    height: 100%;
+}
+
+.image-roll{
+    width: 65%;
+    height: 55px;
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);
+    /* background: gray; */
+}
+
+.image{
+    flex: 1;
+    margin: 0px 5px;
+    height: 100%;
+    border: 3px solid #fff;
+    background: #f1f1f1;
+}
+
+.reviews{
+    width: 90%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    background: #f1f1f1;
+    position: relative;
+}
+
+.reviews .review-overflow{
+    width: 93%;
+    height: 75%;
+    /* background: #00d300; */
+}
+
+.reviews button{
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    border: none;
+    background: #fff;
+}
+
+.reviews button i{
+    margin-right: 2px;
+    color: #b82b84;
+}
+
+.buttons{
+    display: flex;
+    margin-top: 20px;
+}
+
+.buttons button{
+    display: flex;
+    width: 110px;
+    align-items: center;
+    justify-content: center;
+    height: 33px;
+    margin: 0px 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.buttons .currency{
+    margin-left: 3px;
+}
+
+.buttons button:nth-child(1){
+    background: #00d300;
+    color: #fff;
+
+}
+
+.buyBtn.active{
+    animation: bounce .8s infinite;
+}
+
+.buttons button:nth-child(2){
+    background: #b82b84;
+    color: #fff;
+}
+
+.write-review-bg{
+    position: absolute;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: rgb(0, 0, 0, .7);
+}
+
+.write-review-bg.active{
+    display: flex;
+}
+
+.write-review{
+    width: 450px;
+    border-radius: 6px;
+    height: 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background: #fbfbfb;
+}
+
+.closeBtn{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    color: red;
+    font-size: 20px;
+}
+
+.rate{
+    width: 90%;
+    display: flex;
+    margin-top: 15px;
+    height: 40px;
+    justify-content: center;
+    /* background: #b82b84; */
+}
+
+.star{
+    width: 10%;
+    border: px solid #3c3c3c;
+    background: #bdbdbd;
+    height: 90%;
+    cursor: pointer;
+    margin: 0px 5px;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.star.bad-rating{
+    background: #b82b84;
+}
+
+.star.mid-rating{
+    background: yellow;
+}
+
+.star.good-rating{
+    background: #00d300;
+}
+
+.write{
+    width: 90%;
+    /* padding: 0px 0px 0px 10px; */
+    margin-top: 10px ;
+}
+
+.write-review button{
+    display: flex;
+    width: 110px;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+    height: 33px;
+    border: none;
+    background: #b82b84;
+    color: #fff;
+    cursor: pointer;
+}
+
+@keyframes bounce {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+}

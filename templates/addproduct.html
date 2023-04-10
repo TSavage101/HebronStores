@@ -1,0 +1,60 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <link rel="stylesheet" href="{% static 'addproduct.css' %}">
+    <link rel="stylesheet" href="{% static './fontawesome-free-5.15.3-web/CSS/ALL.CSS' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="buyproduct">
+            <div class="part product-image">
+                <div class="main-image">
+                    <img src="{% static 'images/1160358.png' %}" class="dummy" alt="">
+                    <label class="image-label" for="image1"><input type="file" class="image1" id="image1"><i class="fas fa-plus"></i>Add Image</label>
+                    <img src="" class="main-img" alt="">
+                    <div class="image-roll">
+                        <div class="image img2">
+                            <label class="image-labels image-label2" for="image2"><input type="file" class="image2" id="image2"><i class="fas fa-plus"></i></label>
+                            <img src="" alt="">
+                        </div>
+                        <div class="image img3">
+                            <label class="image-labels image-label3" for="image3"><input type="file" class="image3" id="image3"><i class="fas fa-plus"></i></label>
+                            <img src="" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="part product-details">
+                <div class="form-area">
+                    <h1>Add Product</h1>
+                    <form action="">
+                        <input type="text" class="product-name" name="productname" placeholder="Product Name">
+                        <span class="price">Product Price
+                            <input type="text" name="price" value="00.00">
+                        </span>
+                        <span class="quantity">Number in Stock
+                            <input type="number" value="0" name="quantity">
+                        </span>
+                        <select name="" id="">
+                            <option value="">Uncatergorized</option>
+                            <option value="">Food</option>
+                            <option value="">Beaty & Fashion</option>
+                            <option value="">School Essentials</option>
+                            <option value="">Gadgets</option>
+                        </select>
+                        <button class="addBtn">Add</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static '/addproduct.js' %}"></script>
+</body>
+
+</html>

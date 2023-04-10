@@ -1,0 +1,115 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign In and Sign Up Form</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <script src="{% static 'https://kit.fontawesome.com/1401ab8939.js' %}" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1 id="title">Sign Up</h1>
+            <div>
+                <style>
+                    h5 {
+                        color: red;
+                    }
+                </style>
+
+            </div>
+            <form action="" method="POST"> <input type="hidden" name="csrfmiddlewaretoken" value="nTqyGWuue5csITcELRHzCfW3bnaDRNJgRSESivCwdt9OnZiglknWN6q0JE0XnXyK">
+                <div class="input-group">
+
+                    <div class="input-field" id="namefield">
+                        <i class="fa-solid fa-user"></i>
+                        <input class="input" type="text" name="name" placeholder="Name">
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input class="input" type="email" id="semail" name="semail" placeholder="Email Address">
+                    </div>
+
+                    <div class="input-field" id="phonenumber">
+                        <i class="fa-solid fa-phone"></i>
+                        <input class="input" type="text" name="tel" placeholder=" Phone Number">
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input class="input" type="password" id="spassword" name="spassword" placeholder="Password">
+                    </div>
+                    <span class="seller-check"><input type="checkbox" name="seller?" id="">Register as Seller</span>
+                    <p class="forgot invisible"> <i>forgot password </i> <a href="#">Click here!</a></p>
+                </div>
+                <button type="submit" style="
+                width: 100%; 
+                background-color: #ff523b; color: #fff; 
+                border: none;  height: 40px;  
+                border-radius: 20px; 
+                cursor:pointer;
+                outline: 0;
+                " class="submitbtn" id="submitbtn"> Submit</button>
+                <br><br><br>
+                <div class="btn-field">
+                    <button type="button" id="signupbtn"> Sign Up</button>
+                    <!-- Bayode Redirect User to the bankform.html page only if he checks "register as seller" -->
+                    <button type="button" id="signinbtn" class="disable">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        let signupbtn = document.getElementById("signupbtn");
+        let signinbtn = document.getElementById("signinbtn");
+        let nameField = document.getElementById("namefield");
+        let title = document.getElementById("title");
+        let phonenumber = document.getElementById("phonenumber");
+        let semail = document.getElementById("semail");
+        let spassword = document.getElementById("spassword");
+
+        document.addEventListener('DOMContentLoaded', () => {
+            nameField.style.maxHeight = "0";
+            phonenumber.style.maxHeight = "0";
+            title.innerHTML = "Login";
+            signupbtn.classList.add("disable");
+            signinbtn.classList.remove("disable");
+            document.querySelector('.forgot').classList.remove('invisible')
+            document.querySelector('.seller-check').classList.add('invisible')
+            semail.name = 'email';
+            spassword.name = 'password';
+        })
+
+        signinbtn.onclick = function() {
+            nameField.style.maxHeight = "0";
+            phonenumber.style.maxHeight = "0";
+            title.innerHTML = "Login";
+            signupbtn.classList.add("disable");
+            signinbtn.classList.remove("disable");
+            document.querySelector('.forgot').classList.remove('invisible')
+            document.querySelector('.seller-check').classList.add('invisible')
+            semail.name = 'email';
+            spassword.name = 'password';
+        }
+        signupbtn.onclick = function() {
+            nameField.style.maxHeight = "60px";
+            phonenumber.style.maxHeight = "60px";
+            title.innerHTML = "Sign Up";
+            signupbtn.classList.remove("disable");
+            signinbtn.classList.add("disable");
+            document.querySelector('.forgot').classList.add('invisible')
+            document.querySelector('.seller-check').classList.remove('invisible')
+            semail.name = 'semail';
+            spassword.name = 'spassword';
+        }
+    </script>
+</body>
+
+</html>
