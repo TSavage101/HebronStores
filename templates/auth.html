@@ -22,9 +22,11 @@
                         color: red;
                     }
                 </style>
-
+                {% for message in messages %}
+                <h5>{{ message }}</h5>
+                {% endfor %}
             </div>
-            <form action="" method="POST"> <input type="hidden" name="csrfmiddlewaretoken" value="nTqyGWuue5csITcELRHzCfW3bnaDRNJgRSESivCwdt9OnZiglknWN6q0JE0XnXyK">
+            <form action="" method="POST"> {% csrf_token %}
                 <div class="input-group">
 
                     <div class="input-field" id="namefield">
@@ -46,7 +48,7 @@
                         <i class="fa-solid fa-lock"></i>
                         <input class="input" type="password" id="spassword" name="spassword" placeholder="Password">
                     </div>
-                    <span class="seller-check"><input type="checkbox" name="seller" id="">Register as Seller</span>
+                    <span class="seller-check"><input type="checkbox" name="seller" id="isseller" name="isseller" value="1">Register as Seller</span>
                     <p class="forgot invisible"> <i>forgot password </i> <a href="#">Click here!</a></p>
                 </div>
                 <button type="submit" style="

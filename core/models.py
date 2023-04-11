@@ -10,7 +10,7 @@ class Seller(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     acc_num = models.CharField(max_length = 10)
     bank = models.CharField(max_length = 100)
-    phone_number = models.CharField(max_lenght=12)
+    phone_number = models.CharField(max_length=12)
     amount_earned = models.IntegerField(default = 0)
     no_of_sales = models.IntegerField(default = 0)
     no_of_products = models.IntegerField(default = 0)
@@ -19,3 +19,10 @@ class Seller(models.Model):
     
     def __str__(self):
         return self.user.username
+
+class Cart(models.Model):
+    user = models.CharField(max_length = 120)
+    no_in_cart = models.IntegerField(default = 0)
+    
+    def __str__(self):
+        return f"{self.user.username}'s cart"
