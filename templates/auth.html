@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign In and Sign Up Form</title>
-    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <link rel="stylesheet" href="{% static 'auth.css' %}">
     <script src="{% static 'https://kit.fontawesome.com/1401ab8939.js' %}" crossorigin="anonymous"></script>
 </head>
 
@@ -46,7 +46,7 @@
                         <i class="fa-solid fa-lock"></i>
                         <input class="input" type="password" id="spassword" name="spassword" placeholder="Password">
                     </div>
-                    <span class="seller-check"><input type="checkbox" name="seller?" id="">Register as Seller</span>
+                    <span class="seller-check"><input type="checkbox" name="seller" id="">Register as Seller</span>
                     <p class="forgot invisible"> <i>forgot password </i> <a href="#">Click here!</a></p>
                 </div>
                 <button type="submit" style="
@@ -98,6 +98,7 @@
             semail.name = 'email';
             spassword.name = 'password';
         }
+
         signupbtn.onclick = function() {
             nameField.style.maxHeight = "60px";
             phonenumber.style.maxHeight = "60px";

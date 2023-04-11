@@ -1,0 +1,20 @@
+--> Authentication
+    --> Sign in
+        --> Buyer
+        --> Seller
+            --> Bank Form
+    
+--> Homepage
+    --> Display Products
+    --> Search
+
+--> Sellers
+    --> Add Products
+
+--> Products
+    --> Rating, Number, Feedback
+    --> Add to Cart
+
+--> Settings
+
+--> Dashboard

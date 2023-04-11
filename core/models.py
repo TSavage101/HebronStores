@@ -1,8 +1,21 @@
 from django.db import models
 
-# Create your models here.
-class Buyers(models.Model):
-    pass
+from django.contrib.auth import get_user_model
 
-class Sellers(models.Model):
-    pass
+User = get_user_model()
+
+# Create your models here.
+class Seller(models.Model):
+    id_user = models.IntegerField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    acc_num = models.CharField(max_length = 10)
+    bank = models.CharField(max_length = 100)
+    phone_number = models.CharField(max_lenght=12)
+    amount_earned = models.IntegerField(default = 0)
+    no_of_sales = models.IntegerField(default = 0)
+    no_of_products = models.IntegerField(default = 0)
+    pending_orders = models.IntegerField(default = 0)
+    average_product_rating = models.IntegerField(default = 0)
+    
+    def __str__(self):
+        return self.user.username

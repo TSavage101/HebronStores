@@ -1,41 +1,40 @@
-*{
-
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
 
-.container{
+.container {
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(0,0,50,0.8),rgba(0,0,50,0.8));
+    background-image: linear-gradient(rgba(0, 0, 50, 0.8), rgba(0, 0, 50, 0.8));
     background-position: center;
-    background-size:cover;
+    background-size: cover;
     position: relative;
 }
 
-.form-box{
+.form-box {
     width: 90%;
     max-width: 450px;
     position: absolute;
-    top:50%;
-    left:50%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     background: #fff;
     padding: 50px 60px 70px;
-    text-align:center;
+    text-align: center;
 }
 
-.form-box h1{
+.form-box h1 {
     font-size: 30px;
     margin-bottom: 60px;
     color: #ff523b;
     position: relative;
 }
 
-.form-box h1::after{
-    content:' ';
+.form-box h1::after {
+    content: ' ';
     width: 30px;
     height: 4px;
     border-radius: 3px;
@@ -46,7 +45,7 @@
     transform: translate(-50%);
 }
 
-.input-field{
+.input-field {
     background: #eaeaea;
     margin: 15px 0;
     border-radius: 3px;
@@ -57,36 +56,36 @@
     overflow: hidden;
 }
 
-.input{
-    width:100%;
+.input {
+    width: 100%;
     background: transparent;
     border: 0;
     outline: 0;
     padding: 18px 15px;
 }
 
-.input-field i{
+.input-field i {
     margin-left: 15px;
-    color:#999;
+    color: #999;
 }
 
-form p{
+form p {
     text-align: left;
-    font-size:13px;
+    font-size: 13px;
 }
 
-form p a{
+form p a {
     text-decoration: none;
     color: #ff523b;
 }
 
-.btn-field{
+.btn-field {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-.btn-field button{
+.btn-field button {
     flex-basis: 48%;
     background-color: #ff523b;
     color: #fff;
@@ -94,36 +93,34 @@ form p a{
     border-radius: 20px;
     border: 0;
     outline: 0;
-    cursor:pointer;
+    cursor: pointer;
     transition: background 1s;
 }
 
-.input-group{
+.input-group {
     margin-bottom: 30px;
 }
-.btn-field button.disable{
+
+.btn-field button.disable {
     background: #eaeaea;
-    color:#555;
+    color: #555;
 }
 
-.seller-check{
+.seller-check {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.seller-check.invisible{
+.seller-check.invisible {
     display: none;
 }
 
-
-.forgot.invisible{
+.forgot.invisible {
     display: none;
 }
 
-
-
-.seller-check input{
+.seller-check input {
     margin-right: 5px;
     width: 20px;
     height: 20px;
