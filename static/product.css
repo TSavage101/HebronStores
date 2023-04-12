@@ -78,8 +78,7 @@ nav:hover{
 
 .product-details h1{
     font-size: 43px;
-    margin-top: 40px;
-    margin-bottom: 10px;
+    margin-top: 30px;
 }
 
 .other-details{
@@ -87,6 +86,17 @@ nav:hover{
     display: flex;
     height: 37px;
     background: #f1f1f1;
+}
+
+.seller{
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #555555;
+}
+
+.seller:hover{
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .price{
@@ -152,6 +162,16 @@ nav:hover{
     justify-content: center;
 }
 
+.quantity .number{
+    position: relative;
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: center;
+    outline: none;
+    height: 100%;
+}
+
 .main-image{
     width: 100%;
     height: 100%;
@@ -212,37 +232,97 @@ nav:hover{
     color: #b82b84;
 }
 
-.buttons{
+.buyproduct .buttons{
     display: flex;
     margin-top: 20px;
 }
 
-.buttons button{
-    display: flex;
+
+
+.buyproduct .buttons .button{
+    /* display: flex;
+    flex-direction: column; */
     width: 110px;
-    align-items: center;
-    justify-content: center;
     height: 33px;
     margin: 0px 5px;
-    border: none;
-    cursor: pointer;
 }
 
-.buttons .currency{
+.buyproduct .buttons button{
+    width: 100%;
+    height: 100%;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    background: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.button:nth-child(1){
+    /* background: #00d300; */
+    position: relative;
+    width: 110px;
+    /* display: flex;
+    flex-direction: column; */
+    height: auto;
+}
+
+.button:nth-child(1) .drop{
+    position: absolute;
+    color: #fff;
+    right: 0px;
+    background: #00d300;
+    top: 0px;
+    width: 25%;
+    height: 33px;
+    cursor: pointer;
+    border-left: 1px solid #5d5d5d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button:nth-child(1) .drop:hover{
+background: #008000;
+}
+
+.drop i{
+    transform: rotate(90deg)
+    scaleY(1.7);
+}
+
+
+.button:nth-child(1) button{
+    width: 75%;
+    background: #00d300;
+}
+
+.button:nth-child(1) .orderBtn{
+    display: none;
+    width: 100%;
+}
+
+.button:nth-child(1) .orderBtn.visible{
+    display: flex;
+}
+
+.drop i.visible{
+    transform: rotate(270deg)
+    scaleY(1.7);;
+}
+
+
+.buyproduct .buttons .currency{
     margin-left: 3px;
 }
 
-.buttons button:nth-child(1){
-    background: #00d300;
-    color: #fff;
-
-}
 
 .buyBtn.active{
     animation: bounce .8s infinite;
 }
 
-.buttons button:nth-child(2){
+.buyproduct .buttons .button:nth-child(2){
     background: #b82b84;
     color: #fff;
 }
@@ -329,6 +409,273 @@ nav:hover{
     background: #b82b84;
     color: #fff;
     cursor: pointer;
+}
+
+.seller-card{
+    position: absolute;
+    display: flex;
+    pointer-events: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+    scale(0.7);
+    opacity: 0;
+    transition: all 0.5s ease;
+    width: 350px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15),
+    0 3px 6px rgba(0, 0, 0, 0.15);
+    height: 450px;
+    color: #3c3c3c;
+    background: #fff;
+}
+
+.seller-card.active{
+    transform: translate(-50%, -50%)
+    scale(1);
+    opacity: initial;
+    pointer-events: all;
+}
+
+.seller-card .fa-user{
+    font-size: 180px;
+}
+
+.seller-card h1{
+    font-size: 40px;
+}
+
+.seller-rating{
+    font-size: 20px
+}
+
+.contacts{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+}
+
+.contact{
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    background: #ebebeb;
+}
+
+.contact .logo{
+    background: #bdbdbd;
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.contact .logo i{
+    font-size: 20px;
+}
+
+
+.contact .text{
+    width: 85%;
+    height: 100%;
+}
+
+.close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 21px;
+    color: red;
+}
+
+
+
+.sidebar{
+    position: fixed;
+    width: 350px;
+    height: 100vh;
+    top: 0px;
+    z-index: 1;
+    right: 0px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15),
+    0 3px 6px rgba(0, 0, 0, 0.15);
+    margin-right: -350px;
+    transition: all 0.7s ease;
+}
+
+.sidebar.show{
+    margin-right: 0;
+}
+
+.sidebar .sideClose{
+    position: absolute;
+    top: 10px;
+    font-size: 23px;
+    left: 10px;
+    color: #ff7070;
+}
+
+.side-sec{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    height: 100%;
+    color: #3c3c3c;
+}
+
+.general{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.general .fa-user{
+    font-size: 180px;
+    margin-bottom: 10px;
+}
+
+.contact{
+    width: 80%;
+    height: 30px;
+    margin-top: 10px;
+    background: #ebebeb;
+}
+
+.general h1{
+    font-size: 40px;
+}
+
+.general h1 span{
+    margin: 0px 5px;
+}
+
+.general p{
+    font-size: 20px;
+    color: #b82b84;
+}
+
+.sidebar .buttons{
+   margin-top: 20px;
+   display: flex;
+}
+
+.sidebar .buttons button{
+    padding: 7px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-right: 5px;
+    border: 2px solid #b82b84;
+    border-radius: 7px;
+    background: transparent;
+    color: var(--mn-text);
+    transition: all 0.8s ease;
+    display: flex;
+}
+
+.sidebar .buttons button i{
+    margin-left: 10px;
+}
+
+.sidebar .buttons button a{
+    text-decoration: none;
+    color: #3c3c3c;
+}
+
+.acc-options{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.acc-options a{
+    font-size: 23px;
+    margin: 0px 7px;
+    color: #b82b84;
+}
+
+.dashboardBtn{
+    position: absolute;
+    bottom: 20px;
+    padding: 6px;
+    font-size: 15px;
+    background: none;
+    cursor: pointer;
+    outline: none;
+    border: 2px solid #b82b84;
+}
+
+.notifications, .cart, .history{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.notifications h1, .cart h1, .history h1{
+    font-size: 40px;
+    position: relative;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    top: 13%;
+}
+
+.notification-area, .cart-area, .history-area{
+    position: relative;
+    top: 15%;
+    width: 97%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: hidden;
+    background: #ebebeb;
+}
+
+.side-sec{
+    display: none;
+}
+
+.general.show{
+    display: flex;
+}
+
+.notifications.show{
+    display: flex;
+}
+
+.cart.show{
+    display: flex;
+}
+
+.history.show{
+    display: flex;
+}
+
+
+.flotingcartBtn{
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    /* background: #b82b84; */
+    width: 65px;
+    height: 65px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15),
+    0 3px 6px rgba(0, 0, 0, 0.15);
+    color: #b82b84;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 7px;
+    font-size: 30px;
 }
 
 @keyframes bounce {

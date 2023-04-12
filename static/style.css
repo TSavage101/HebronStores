@@ -195,7 +195,18 @@ body {
     margin-bottom: 10px;
 }
 
+<<<<<<< HEAD
 .general h1 {
+=======
+.contact{
+    width: 80%;
+    height: 30px;
+    margin-top: 10px;
+    background: #ebebeb;
+}
+
+.general h1{
+>>>>>>> ae88ab0516145f2f70f3f4489475dafed761739f
     font-size: 40px;
 }
 
