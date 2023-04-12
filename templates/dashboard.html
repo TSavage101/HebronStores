@@ -79,17 +79,22 @@
                     <p>You have'nt made any sales</p>
                 </div>
                 <div class="setting products">
+                    {% if sellers_products|length == 0 %}
                     <div class="none">
                         <i class="fas fa-heart-broken"></i>
                         <h1>You don't have any products</h1>
-                        <button><i class="fas fa-plus"></i>Add Product</button>
+                        <a href="{% url 'addproduct' %}"><button><i class="fas fa-plus "></i>Add Product</button></a>
                     </div>
+                    {% else %}
+                    <!-- Omaga put the way the sellers products should be listed once they add a product.
+                    Dont forget to add the add product button at the button so they can add more. -->
+                    {% endif %}
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="{% static 'settings.js' %}"></script>
+    <script src="{% static 'settings.js' %} "></script>
 </body>
 
 </html>

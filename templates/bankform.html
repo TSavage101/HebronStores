@@ -1,23 +1,29 @@
+{% load static %}
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Your Bank Account</title>
-    <link rel="stylesheet" href="bankform.css">
+    <link rel="stylesheet" href="{% static 'bankform.css' %}">
 </head>
+
 <body>
     <div class="container">
         <div class="form-box">
             <h1>Add Bank Account</h1>
-            <div class="form">
-                <select name="" class="bank-select" id=""></select>
-                <input type="text" placeholder="Account Number">
-                <input type="text" placeholder="Account Name">
-                <button class="addBtn">Sign Up</button>
-            </div>
+            <form action="." method="POST"> {% csrf_token %}
+                <div class="form">
+                    <select name="bank" class="bank-select" id=""></select>
+                    <input type="text" name="accnum" placeholder="Account Number">
+                    <input type="text" name="accname" placeholder="Account Name">
+                    <button type="submit" class="addBtn">Sign Up</button>
+                </div>
+            </form>
         </div>
     </div>
-    <script src="banklist.js"></script>
+    <script src="{% static 'bank.js' %}"></script>
 </body>
+
 </html>
