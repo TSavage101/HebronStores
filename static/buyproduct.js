@@ -1,6 +1,9 @@
 const minusBtn = document.querySelector('.minus')
 const addBtn = document.querySelector('.plus')
 const addReview = document.querySelector('.addReview')
+const sellerBtn = document.querySelector('.seller')
+const sellerCard = document.querySelector('.seller-card')
+const closeSeller = document.querySelector('.close')
 const stars = document.querySelectorAll('.star')
 const stockNo = 5
 const price = 1300
@@ -51,6 +54,21 @@ addReview.addEventListener('click', ()=>{
 document.querySelector('.closeBtn').addEventListener('click', ()=>{
     document.querySelector('.write-review-bg').classList.remove('active')
 })
+
+document.querySelector('.drop').addEventListener('click', ()=>{
+    document.querySelector('.orderBtn').classList.toggle('visible')
+    document.querySelector('.drop i').classList.toggle('visible')
+})
+
+sellerBtn.addEventListener('click', ()=>{
+    sellerCard.classList.add('active')
+})
+
+closeSeller.addEventListener('click', ()=>{
+    sellerCard.classList.remove('active')
+})
+
+
 
 // console.log(quantityNo)
 

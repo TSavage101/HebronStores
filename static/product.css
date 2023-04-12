@@ -78,8 +78,7 @@ nav:hover{
 
 .product-details h1{
     font-size: 43px;
-    margin-top: 40px;
-    margin-bottom: 10px;
+    margin-top: 30px;
 }
 
 .other-details{
@@ -87,6 +86,17 @@ nav:hover{
     display: flex;
     height: 37px;
     background: #f1f1f1;
+}
+
+.seller{
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #555555;
+}
+
+.seller:hover{
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .price{
@@ -217,32 +227,92 @@ nav:hover{
     margin-top: 20px;
 }
 
-.buttons button{
-    display: flex;
+
+
+.buttons .button{
+    /* display: flex;
+    flex-direction: column; */
     width: 110px;
-    align-items: center;
-    justify-content: center;
     height: 33px;
     margin: 0px 5px;
-    border: none;
-    cursor: pointer;
 }
+
+.buttons button{
+    width: 100%;
+    height: 100%;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    background: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.button:nth-child(1){
+    /* background: #00d300; */
+    position: relative;
+    width: 110px;
+    /* display: flex;
+    flex-direction: column; */
+    height: auto;
+}
+
+.button:nth-child(1) .drop{
+    position: absolute;
+    color: #fff;
+    right: 0px;
+    background: #00d300;
+    top: 0px;
+    width: 25%;
+    height: 33px;
+    cursor: pointer;
+    border-left: 1px solid #5d5d5d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button:nth-child(1) .drop:hover{
+background: #008000;
+}
+
+.drop i{
+    transform: rotate(90deg)
+    scaleY(1.7);
+}
+
+
+.button:nth-child(1) button{
+    width: 75%;
+    background: #00d300;
+}
+
+.button:nth-child(1) .orderBtn{
+    display: none;
+    width: 100%;
+}
+
+.button:nth-child(1) .orderBtn.visible{
+    display: flex;
+}
+
+.drop i.visible{
+    transform: rotate(270deg)
+    scaleY(1.7);;
+}
+
 
 .buttons .currency{
     margin-left: 3px;
 }
 
-.buttons button:nth-child(1){
-    background: #00d300;
-    color: #fff;
-
-}
 
 .buyBtn.active{
     animation: bounce .8s infinite;
 }
 
-.buttons button:nth-child(2){
+.buttons .button:nth-child(2){
     background: #b82b84;
     color: #fff;
 }
@@ -329,6 +399,83 @@ nav:hover{
     background: #b82b84;
     color: #fff;
     cursor: pointer;
+}
+
+.seller-card{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+    scale(0.7);
+    opacity: 0;
+    transition: all 0.5s ease;
+    width: 350px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15),
+    0 3px 6px rgba(0, 0, 0, 0.15);
+    height: 450px;
+    color: #3c3c3c;
+    background: #fff;
+}
+
+.seller-card.active{
+    transform: translate(-50%, -50%)
+    scale(1);
+    opacity: initial;
+}
+
+.seller-card .fa-user{
+    font-size: 180px;
+}
+
+.seller-card h1{
+    font-size: 40px;
+}
+
+.seller-rating{
+    font-size: 20px
+}
+
+.contacts{
+    width: 70%;
+    height: 150px;
+}
+
+.contact{
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    background: #ebebeb;
+}
+
+.contact .logo{
+    background: #bdbdbd;
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.contact .logo i{
+    font-size: 20px;
+}
+
+
+.contact .text{
+    width: 85%;
+    height: 100%;
+}
+
+.close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 21px;
+    color: red;
 }
 
 @keyframes bounce {

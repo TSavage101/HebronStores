@@ -203,6 +203,13 @@ margin-top: 10px;
     margin-bottom: 10px;
 }
 
+.contact{
+    width: 80%;
+    height: 30px;
+    margin-top: 10px;
+    background: #ebebeb;
+}
+
 .general h1{
     font-size: 40px;
 }
