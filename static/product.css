@@ -222,14 +222,14 @@ nav:hover{
     color: #b82b84;
 }
 
-.buttons{
+.buyproduct .buttons{
     display: flex;
     margin-top: 20px;
 }
 
 
 
-.buttons .button{
+.buyproduct .buttons .button{
     /* display: flex;
     flex-direction: column; */
     width: 110px;
@@ -237,7 +237,7 @@ nav:hover{
     margin: 0px 5px;
 }
 
-.buttons button{
+.buyproduct .buttons button{
     width: 100%;
     height: 100%;
     border: none;
@@ -303,7 +303,7 @@ background: #008000;
 }
 
 
-.buttons .currency{
+.buyproduct .buttons .currency{
     margin-left: 3px;
 }
 
@@ -312,7 +312,7 @@ background: #008000;
     animation: bounce .8s infinite;
 }
 
-.buttons .button:nth-child(2){
+.buyproduct .buttons .button:nth-child(2){
     background: #b82b84;
     color: #fff;
 }
@@ -404,6 +404,7 @@ background: #008000;
 .seller-card{
     position: absolute;
     display: flex;
+    pointer-events: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -425,6 +426,7 @@ background: #008000;
     transform: translate(-50%, -50%)
     scale(1);
     opacity: initial;
+    pointer-events: all;
 }
 
 .seller-card .fa-user{
@@ -441,6 +443,10 @@ background: #008000;
 
 .contacts{
     width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 150px;
 }
 
@@ -476,6 +482,190 @@ background: #008000;
     right: 10px;
     font-size: 21px;
     color: red;
+}
+
+
+
+.sidebar{
+    position: fixed;
+    width: 350px;
+    height: 100vh;
+    top: 0px;
+    z-index: 1;
+    right: 0px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15),
+    0 3px 6px rgba(0, 0, 0, 0.15);
+    margin-right: -350px;
+    transition: all 0.7s ease;
+}
+
+.sidebar.show{
+    margin-right: 0;
+}
+
+.sidebar .sideClose{
+    position: absolute;
+    top: 10px;
+    font-size: 23px;
+    left: 10px;
+    color: #ff7070;
+}
+
+.side-sec{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    height: 100%;
+    color: #3c3c3c;
+}
+
+.general{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.general .fa-user{
+    font-size: 180px;
+    margin-bottom: 10px;
+}
+
+.contact{
+    width: 80%;
+    height: 30px;
+    margin-top: 10px;
+    background: #ebebeb;
+}
+
+.general h1{
+    font-size: 40px;
+}
+
+.general h1 span{
+    margin: 0px 5px;
+}
+
+.general p{
+    font-size: 20px;
+    color: #b82b84;
+}
+
+.sidebar .buttons{
+   margin-top: 20px;
+   display: flex;
+}
+
+.sidebar .buttons button{
+    padding: 7px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-right: 5px;
+    border: 2px solid #b82b84;
+    border-radius: 7px;
+    background: transparent;
+    color: var(--mn-text);
+    transition: all 0.8s ease;
+    display: flex;
+}
+
+.sidebar .buttons button i{
+    margin-left: 10px;
+}
+
+.sidebar .buttons button a{
+    text-decoration: none;
+    color: #3c3c3c;
+}
+
+.acc-options{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.acc-options a{
+    font-size: 23px;
+    margin: 0px 7px;
+    color: #b82b84;
+}
+
+.dashboardBtn{
+    position: absolute;
+    bottom: 20px;
+    padding: 6px;
+    font-size: 15px;
+    background: none;
+    cursor: pointer;
+    outline: none;
+    border: 2px solid #b82b84;
+}
+
+.notifications, .cart, .history{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.notifications h1, .cart h1, .history h1{
+    font-size: 40px;
+    position: relative;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    top: 13%;
+}
+
+.notification-area, .cart-area, .history-area{
+    position: relative;
+    top: 15%;
+    width: 97%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: hidden;
+    background: #ebebeb;
+}
+
+.side-sec{
+    display: none;
+}
+
+.general.show{
+    display: flex;
+}
+
+.notifications.show{
+    display: flex;
+}
+
+.cart.show{
+    display: flex;
+}
+
+.history.show{
+    display: flex;
+}
+
+
+.flotingcartBtn{
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    /* background: #b82b84; */
+    width: 65px;
+    height: 65px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15),
+    0 3px 6px rgba(0, 0, 0, 0.15);
+    color: #b82b84;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 7px;
+    font-size: 30px;
 }
 
 @keyframes bounce {

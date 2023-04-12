@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'nav.css' %}">
     <link rel="stylesheet" href="{% static 'product.css' %}">
     <link rel="stylesheet" href="{% static '/fontawesome-free-5.15.3-web/CSS/ALL.CSS' %}">
-    <script src="{% static 'sidenav.js' %}" defer></script>
+    <script src="{% static 'home.js' %}" defer></script>
 </head>
 
 <body>
@@ -31,7 +31,7 @@
                 </div>
             </div>
         </nav>
-        <div class="buyproduct">
+        <div class="buyproduct top-picks all-products">
             <div class="part product-image">
                 <div class="main-image">
                     <img src="{% static './images/slippers.jpeg' %}" alt="">
@@ -130,7 +130,10 @@
             </div>
         </div>
     </div>
-    <!-- <div class="sidebar">
+    <button class="flotingcartBtn" title="Cart">
+        <i class="fas fa-shopping-bag"></i>
+    </button>
+    <div class="sidebar">
             <div class="side-sec general">
                 <i class="fas fa-user"></i>
                 <h1><span>Omaga</span><span>Owoicho</span></h1>
@@ -165,7 +168,7 @@
                 <a href="#" class="sideHistory" title="shopping History"><i class="fas fa-clock"></i></a>
                 <a href="#" class="sideNotif" title="My Notifications"><i class="fas fa-bell"></i></a>
             </div>
-        </div> -->
+        </div>
     <script src="{% static '/buyproduct.js' %}"></script>
 </body>
 
