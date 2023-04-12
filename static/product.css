@@ -162,6 +162,16 @@ nav:hover{
     justify-content: center;
 }
 
+.quantity .number{
+    position: relative;
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: center;
+    outline: none;
+    height: 100%;
+}
+
 .main-image{
     width: 100%;
     height: 100%;
