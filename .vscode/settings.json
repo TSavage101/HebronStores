@@ -1,3 +1,4 @@
 {
-    "cmake.configureOnOpen": false
+    "cmake.configureOnOpen": false,
+    "emmet.includeLanguages": {"jinja-html": "html"},
 }
