@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             select.addEventListener('change', () => {
                 const index = select.selectedIndex;
                 // console.log(index)
-                // bankCode = bankArray[index].code
+                bankCode = bankArray[index].code
                 // document.querySelector('span').innerHTML = bankCode
 
                 document.querySelector('.addBtn').addEventListener('click', () => {
