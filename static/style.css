@@ -1,35 +1,32 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
     scroll-behavior: smooth;
-
 }
 
-body{
+body {
     width: 100vw;
     height: auto;
     overflow-x: hidden;
 }
 
-.container{
+.container {
     width: 100vw;
     position: relative;
     height: auto;
     /* background: #ddd; */
 }
 
-
-
-
-.top-picks{
+.top-picks {
     width: 100vw;
     height: calc(100vh - 75px);
     /* background: #c1c1c1; */
     /* border-bottom: 2px solid black; */
 }
-.all-products{
+
+.all-products {
     width: 100%;
     height: auto;
     display: flex;
@@ -37,7 +34,7 @@ body{
     align-items: center;
 }
 
-.search{
+.search {
     position: relative;
     top: 70px;
     height: 45px;
@@ -47,7 +44,7 @@ body{
     background: #fff;
 }
 
-.seachbar{
+.seachbar {
     width: 86%;
     border: none;
     font-size: 20px;
@@ -57,7 +54,7 @@ body{
     height: 100%;
 }
 
-.searchBtn{
+.searchBtn {
     width: 14%;
     border: none;
     color: #b82b84;
@@ -68,7 +65,7 @@ body{
     height: 100%;
 }
 
-.cards{
+.cards {
     width: 100vw;
     padding: 30px;
     padding-top: 90px;
@@ -79,8 +76,7 @@ body{
     background: #f1f1f1;
 }
 
-
-.card{
+.card {
     width: 100%;
     height: 330px;
     background: #fff;
@@ -92,7 +88,7 @@ body{
     /* justify-content: center; */
 }
 
-.image{
+.image {
     width: 95%;
     height: 220px;
     margin-top: 10px;
@@ -100,37 +96,35 @@ body{
     background: #3c3c3c;
 }
 
-
-
-.image img{
+.image img {
     width: 100%;
     transition: all 0.8s ease;
     height: 100%;
 }
 
-.image:hover img{
+.image:hover img {
     transform: scale(2);
 }
 
-.card a{
+.card a {
     color: #3c3c3c;
     text-decoration: none;
 }
 
-.card a:hover{
-  text-decoration: underline;
+.card a:hover {
+    text-decoration: underline;
 }
 
-.card h3{
-margin-top: 10px;
- font-size: 20px;
+.card h3 {
+    margin-top: 10px;
+    font-size: 20px;
 }
 
-.card .currency{
+.card .currency {
     text-decoration: line-through;
 }
 
-.card button{
+.card button {
     margin-top: 10px;
     width: 170px;
     background: none;
@@ -139,23 +133,22 @@ margin-top: 10px;
     height: 26px;
 }
 
-.card .fa-plus{
+.card .fa-plus {
     margin-right: 4px;
     color: #b82b84;
 }
 
-.card button:hover{
+.card button:hover {
     background: #b82b84;
     color: #ebebeb;
 }
 
-
-.card button:hover i{
+.card button:hover i {
     background: #b82b84;
     color: #ebebeb;
 }
 
-.sidebar{
+.sidebar {
     position: fixed;
     width: 350px;
     height: 100vh;
@@ -163,17 +156,16 @@ margin-top: 10px;
     z-index: 1;
     right: 0px;
     background-color: #fff;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15),
-    0 3px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.15);
     margin-right: -350px;
     transition: all 0.7s ease;
 }
 
-.sidebar.show{
+.sidebar.show {
     margin-right: 0;
 }
 
-.sidebar .sideClose{
+.sidebar .sideClose {
     position: absolute;
     top: 10px;
     font-size: 23px;
@@ -181,7 +173,7 @@ margin-top: 10px;
     color: #ff7070;
 }
 
-.side-sec{
+.side-sec {
     position: absolute;
     top: 0;
     left: 0;
@@ -191,18 +183,21 @@ margin-top: 10px;
     color: #3c3c3c;
 }
 
-.general{
+.general {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.general .fa-user{
+.general .fa-user {
     font-size: 180px;
     margin-bottom: 10px;
 }
 
+<<<<<<< HEAD
+.general h1 {
+=======
 .contact{
     width: 80%;
     height: 30px;
@@ -211,24 +206,25 @@ margin-top: 10px;
 }
 
 .general h1{
+>>>>>>> ae88ab0516145f2f70f3f4489475dafed761739f
     font-size: 40px;
 }
 
-.general h1 span{
+.general h1 span {
     margin: 0px 5px;
 }
 
-.general p{
+.general p {
     font-size: 20px;
     color: #b82b84;
 }
 
-.buttons{
-   margin-top: 20px;
-   display: flex;
+.buttons {
+    margin-top: 20px;
+    display: flex;
 }
 
-.buttons button{
+.buttons button {
     padding: 7px;
     font-size: 15px;
     cursor: pointer;
@@ -241,28 +237,28 @@ margin-top: 10px;
     display: flex;
 }
 
-.buttons button i{
+.buttons button i {
     margin-left: 10px;
 }
 
-.buttons button a{
+.buttons button a {
     text-decoration: none;
     color: #3c3c3c;
 }
 
-.acc-options{
+.acc-options {
     position: absolute;
     top: 10px;
     right: 20px;
 }
 
-.acc-options a{
+.acc-options a {
     font-size: 23px;
     margin: 0px 7px;
     color: #b82b84;
 }
 
-.dashboardBtn{
+.dashboardBtn {
     position: absolute;
     bottom: 20px;
     padding: 6px;
@@ -273,20 +269,26 @@ margin-top: 10px;
     border: 2px solid #b82b84;
 }
 
-.notifications, .cart, .history{
+.notifications,
+.cart,
+.history {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.notifications h1, .cart h1, .history h1{
+.notifications h1,
+.cart h1,
+.history h1 {
     font-size: 40px;
     position: relative;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     top: 13%;
 }
 
-.notification-area, .cart-area, .history-area{
+.notification-area,
+.cart-area,
+.history-area {
     position: relative;
     top: 15%;
     width: 97%;
@@ -298,36 +300,34 @@ margin-top: 10px;
     background: #ebebeb;
 }
 
-.side-sec{
+.side-sec {
     display: none;
 }
 
-.general.show{
+.general.show {
     display: flex;
 }
 
-.notifications.show{
+.notifications.show {
     display: flex;
 }
 
-.cart.show{
+.cart.show {
     display: flex;
 }
 
-.history.show{
+.history.show {
     display: flex;
 }
 
-
-.flotingcartBtn{
+.flotingcartBtn {
     position: fixed;
     right: 30px;
     bottom: 30px;
     /* background: #b82b84; */
     width: 65px;
     height: 65px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15),
-    0 3px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.15);
     color: #b82b84;
     border: none;
     outline: none;
@@ -337,21 +337,20 @@ margin-top: 10px;
     font-size: 30px;
 }
 
-.right-side ul li:nth-child(1) a{
+.right-side ul li:nth-child(1) a {
     color: #b82b84;
 }
 
-.right-side ul li:nth-child(1) a:after{
+.right-side ul li:nth-child(1) a:after {
     width: 15px;
     opacity: initial;
-    
 }
 
-.right-side ul li a:hover{
+.right-side ul li a:hover {
     color: #b82b84;
 }
 
-.right-side ul li a:hover::after{
+.right-side ul li a:hover::after {
     width: 100%;
     opacity: initial;
 }

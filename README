@@ -1,14 +1,14 @@
---> Authentication
+--> Authentication (DONE!!!)
     --> Sign in
         --> Buyer
         --> Seller
             --> Bank Form
     
 --> Homepage
-    --> Display Products
+    --> Display Products (DONE!!!)
     --> Search
 
---> Sellers
+--> Sellers (DONE!!!)
     --> Add Products
 
 --> Products
