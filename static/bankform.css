@@ -32,7 +32,7 @@
     margin-top: 20px;
 }
 
-.bank-select, input{
+.bank-select, .bankinputs{
     width: 100%;
     height: 40px;
     margin-bottom: 20px;
