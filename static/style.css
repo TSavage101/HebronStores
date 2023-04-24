@@ -148,7 +148,7 @@ body {
     color: #ebebeb;
 }
 
-.sidebar {
+.sidebar{
     position: fixed;
     width: 350px;
     height: 100vh;
@@ -156,16 +156,17 @@ body {
     z-index: 1;
     right: 0px;
     background-color: #fff;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15),
+    0 3px 6px rgba(0, 0, 0, 0.15);
     margin-right: -350px;
     transition: all 0.7s ease;
 }
 
-.sidebar.show {
+.sidebar.show{
     margin-right: 0;
 }
 
-.sidebar .sideClose {
+.sidebar .sideClose{
     position: absolute;
     top: 10px;
     font-size: 23px;
@@ -173,7 +174,7 @@ body {
     color: #ff7070;
 }
 
-.side-sec {
+.side-sec{
     position: absolute;
     top: 0;
     left: 0;
@@ -183,48 +184,37 @@ body {
     color: #3c3c3c;
 }
 
-.general {
+.general{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.general .fa-user {
+.general .fa-user{
     font-size: 180px;
     margin-bottom: 10px;
 }
 
-<<<<<<< HEAD
-.general h1 {
-=======
-.contact{
-    width: 80%;
-    height: 30px;
-    margin-top: 10px;
-    background: #ebebeb;
-}
-
 .general h1{
->>>>>>> ae88ab0516145f2f70f3f4489475dafed761739f
     font-size: 40px;
 }
 
-.general h1 span {
+.general h1 span{
     margin: 0px 5px;
 }
 
-.general p {
+.general p{
     font-size: 20px;
     color: #b82b84;
 }
 
-.buttons {
-    margin-top: 20px;
-    display: flex;
+.buttons{
+   margin-top: 20px;
+   display: flex;
 }
 
-.buttons button {
+.buttons button{
     padding: 7px;
     font-size: 15px;
     cursor: pointer;
@@ -237,28 +227,28 @@ body {
     display: flex;
 }
 
-.buttons button i {
+.buttons button i{
     margin-left: 10px;
 }
 
-.buttons button a {
+.buttons button a{
     text-decoration: none;
     color: #3c3c3c;
 }
 
-.acc-options {
+.acc-options{
     position: absolute;
     top: 10px;
     right: 20px;
 }
 
-.acc-options a {
+.acc-options a{
     font-size: 23px;
     margin: 0px 7px;
     color: #b82b84;
 }
 
-.dashboardBtn {
+.dashboardBtn{
     position: absolute;
     bottom: 20px;
     padding: 6px;
@@ -269,26 +259,20 @@ body {
     border: 2px solid #b82b84;
 }
 
-.notifications,
-.cart,
-.history {
+.notifications, .cart, .history{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.notifications h1,
-.cart h1,
-.history h1 {
+.notifications h1, .cart h1, .history h1{
     font-size: 40px;
     position: relative;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     top: 13%;
 }
 
-.notification-area,
-.cart-area,
-.history-area {
+.notification-area, .cart-area, .history-area{
     position: relative;
     top: 15%;
     width: 97%;
@@ -300,34 +284,36 @@ body {
     background: #ebebeb;
 }
 
-.side-sec {
+.side-sec{
     display: none;
 }
 
-.general.show {
+.general.show{
     display: flex;
 }
 
-.notifications.show {
+.notifications.show{
     display: flex;
 }
 
-.cart.show {
+.cart.show{
     display: flex;
 }
 
-.history.show {
+.history.show{
     display: flex;
 }
 
-.flotingcartBtn {
+
+.flotingcartBtn{
     position: fixed;
     right: 30px;
     bottom: 30px;
     /* background: #b82b84; */
     width: 65px;
     height: 65px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15),
+    0 3px 6px rgba(0, 0, 0, 0.15);
     color: #b82b84;
     border: none;
     outline: none;
@@ -337,20 +323,21 @@ body {
     font-size: 30px;
 }
 
-.right-side ul li:nth-child(1) a {
+.right-side ul li:nth-child(1) a{
     color: #b82b84;
 }
 
-.right-side ul li:nth-child(1) a:after {
+.right-side ul li:nth-child(1) a:after{
     width: 15px;
     opacity: initial;
+    
 }
 
-.right-side ul li a:hover {
+.right-side ul li a:hover{
     color: #b82b84;
 }
 
-.right-side ul li a:hover::after {
+.right-side ul li a:hover::after{
     width: 100%;
     opacity: initial;
 }
