@@ -72,8 +72,14 @@ def authe(request, *args, **kwargs):
     
     return render(request, 'auth.html', {})
 
-def product(request, *args, **kwargs):
-    return render(request, 'product.html', {})
+def product(request, pk, *args, **kwargs):
+    product = Product.objects.get(pk=pk)
+    
+    context = {
+        'product': product,
+    }
+    
+    return render(request, 'product.html', context)
 
 @login_required(login_url='auth')
 def bankform(request, *args, **kwargs):
@@ -162,3 +168,6 @@ def addproduct(request, *args, **kwargs):
 def logout(request, *args, **kwargs):
     auth.logout(request)
     return redirect('home')
+
+def categories(request, *args, **kwargs):
+    return render(request, 'catergories.html', {})
