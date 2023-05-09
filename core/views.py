@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 
+from django.http import HttpResponse, JsonResponse
+
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 
@@ -74,9 +76,12 @@ def authe(request, *args, **kwargs):
 
 def product(request, pk, *args, **kwargs):
     product = Product.objects.get(pk=pk)
+    user_obj = User.objects.get(username=product.seller)
+    seller = Seller.objects.get(id_user=user_obj.id, user=user_obj)
     
     context = {
         'product': product,
+        'seller': seller,
     }
     
     return render(request, 'product.html', context)
@@ -167,7 +172,12 @@ def addproduct(request, *args, **kwargs):
 @login_required(login_url='auth')
 def logout(request, *args, **kwargs):
     auth.logout(request)
-    return redirect('home')
+    return redirect('auth')
 
 def categories(request, *args, **kwargs):
     return render(request, 'catergories.html', {})
+
+# def jsstuff(request,  *args, **kwargs):
+    
+    
+#     return JsonResponse()

@@ -34,30 +34,36 @@
         <div class="buyproduct top-picks all-products">
             <div class="part product-image">
                 <div class="main-image">
-                    <img src="{% static './images/slippers.jpeg' %}" alt="">
+                    <img src="{{ product.picture1.url }}" alt="">
                     <div class="image-roll">
                         <div class="image img1">
-                            <img src="{% static './images/slippers.jpeg' %}" alt="">
+                            <img src="{{ product.picture1.url }}" alt="">
                         </div>
                         <div class="image img1">
-
+                            <img src="{{ product.picture2.url }}" alt="">
                         </div>
                         <div class="image img1">
-
+                            <img src="{{ product.picture3.url }}" alt="">
+                        </div>
+                        <div class="image img1">
+                            <img src="{{ product.picture4.url }}" alt="">
+                        </div>
+                        <div class="image img1">
+                            <img src="{{ product.picture5.url }}" alt="">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="part product-details">
-                <h1>Female Slippers</h1>
-                <p class="seller">Omaga David</p>
+                <h1>{{ product.name }}</h1>
+                <p class="seller">{{ product.seller }}</p>
                 <div class="other-details">
                     <div class="price">
                         <h3>
-                            <div class="currency">N</div>1300</h3>
+                            <div class="currency">N</div>{{ product.price }}</h3>
                     </div>
                     <div class="rating">
-                        0.0
+                        {{ product.arating }}
                         <i class="fas fa-star"></i>
                     </div>
                 </div>
@@ -76,16 +82,16 @@
                 </div>
                 <div class="buttons">
                     <div class="button">
-                      <div class="drop">
-                         <i>></i>
-                      </div>
-                      <button class="buyBtn">Buy <div class="currency">N</div><div class="pay"></div></button>
-                      <button class="orderBtn">Pay On Deilivery</button>
+                        <div class="drop">
+                            <i>></i>
+                        </div>
+                        <button class="buyBtn">Buy <div class="currency">N</div><div class="pay"></div></button>
+                        <button class="orderBtn">Pay On Deilivery</button>
                     </div>
-                     <div class="button">
-                      <button class="cartBtn"><i class="fas fa-plus"></i> Add to Cart</button>
-                     </div>
-                  </div>
+                    <div class="button">
+                        <button class="cartBtn"><i class="fas fa-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
             </div>
             <div class="write-review-bg">
                 <div class="write-review">
@@ -106,9 +112,9 @@
     <div class="seller-card">
         <a href="#" class="close"><i class="fas fa-times"></i></a>
         <i class="fas fa-user"></i>
-        <h1>Omaga David</h1>
+        <h1>{{ seller.user.username }}</h1>
         <div class="seller-rating">
-            0.0
+            {{ seller.average_product_rating }}
             <i class="fas fa-star"></i>
         </div>
         <div class="contacts">
@@ -134,41 +140,41 @@
         <i class="fas fa-shopping-bag"></i>
     </button>
     <div class="sidebar">
-            <div class="side-sec general">
-                <i class="fas fa-user"></i>
-                <h1><span>Omaga</span><span>Owoicho</span></h1>
-                <p>omagaowi@gmail.com</p>
-                <div class="buttons">
-                    <button class="logoutbtn1"><i class="fas fa-sign-out-alt"></i><a href="/logout">Logout</a></button>
-                     <button class="deletebtn1"><i class="fas fa-cog"></i><a href="/settings">Account Settings</a></button>
-                </div>
-               <button class="dashboardBtn">Seller Dashboard <i class="fas fa-external-link-alt"></i></button>
+        <div class="side-sec general">
+            <i class="fas fa-user"></i>
+            <h1><span>{{ request.user.username }}</span></h1>
+            <p>{{ request.user.email }}</p>
+            <div class="buttons">
+                <button class="logoutbtn1"><i class="fas fa-sign-out-alt"></i><a href="{% url 'logout' %}">Logout</a></button>
+                <button class="deletebtn1"><i class="fas fa-cog"></i><a href="/settings">Account Settings</a></button>
             </div>
-            <div class="side-sec notifications">
-                <h1>Notifications</h1>
-                <div class="notification-area">
-                    <p>No notifications</p>
-                </div>
-            </div>
-            <div class="side-sec cart">
-                <h1>Cart</h1>
-                <div class="cart-area">
-                    <p>No Items</p>
-                </div>
-            </div>
-            <div class="side-sec history">
-                <h1>Shopping History</h1>
-                <div class="history-area">
-                    <p>No Items</p>
-                </div>
-            </div>
-            <a href="#" class="sideClose"><i class="fas fa-times"></i></a>
-            <div class="acc-options">
-                <a href="#" class="sideCart" title="Cart"><i class="fas fa-shopping-bag"></i></a>
-                <a href="#" class="sideHistory" title="shopping History"><i class="fas fa-clock"></i></a>
-                <a href="#" class="sideNotif" title="My Notifications"><i class="fas fa-bell"></i></a>
+            <button class="dashboardBtn">Seller Dashboard <i class="fas fa-external-link-alt"></i></button>
+        </div>
+        <div class="side-sec notifications">
+            <h1>Notifications</h1>
+            <div class="notification-area">
+                <p>No notifications</p>
             </div>
         </div>
+        <div class="side-sec cart">
+            <h1>Cart</h1>
+            <div class="cart-area">
+                <p>No Items</p>
+            </div>
+        </div>
+        <div class="side-sec history">
+            <h1>Shopping History</h1>
+            <div class="history-area">
+                <p>No Items</p>
+            </div>
+        </div>
+        <a href="#" class="sideClose"><i class="fas fa-times"></i></a>
+        <div class="acc-options">
+            <a href="#" class="sideCart" title="Cart"><i class="fas fa-shopping-bag"></i></a>
+            <a href="#" class="sideHistory" title="shopping History"><i class="fas fa-clock"></i></a>
+            <a href="#" class="sideNotif" title="My Notifications"><i class="fas fa-bell"></i></a>
+        </div>
+    </div>
     <script src="{% static '/buyproduct.js' %}"></script>
 </body>
 

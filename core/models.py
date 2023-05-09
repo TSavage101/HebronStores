@@ -28,7 +28,7 @@ class Seller(models.Model):
     no_of_sales = models.IntegerField(default = 0)
     no_of_products = models.IntegerField(default = 0)
     pending_orders = models.IntegerField(default = 0)
-    average_product_rating = models.IntegerField(default = 0)
+    average_product_rating = models.DecimalField(default = 0, max_digits=2, decimal_places=1)
     is_verified = models.BooleanField(default=False)
     
     def __str__(self):

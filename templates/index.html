@@ -46,9 +46,9 @@
                         <img src="{{ item.picture1.url }}" alt="">
                     </div>
                     <a href="#">
-                        <h3>{{ item.name }}</h3>
+                        <h3><a href="{% url 'product' item.pk %}">{{ item.name }}</a></h3>
                     </a>
-                    <p><span class="currency">N</span>2500</p>
+                    <p><span class="currency">N</span>{{ item.price }}</p>
                     <div class="rating" style="color: #b82b84;">
                         {% if item.arating >= 1 and item.arating <= 1.3 %}
                         <i class="fa fa-star" ></i>
