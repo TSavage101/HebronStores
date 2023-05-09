@@ -81,6 +81,7 @@ def product(request, pk, *args, **kwargs):
     
     context = {
         'product': product,
+        'user_obj': user_obj,
         'seller': seller,
     }
     
@@ -115,8 +116,12 @@ def bankform(request, *args, **kwargs):
 @login_required(login_url='auth')
 def dashboard(request, *args, **kwargs):
     sellers_products = Product.objects.filter(seller=request.user.username)
+    user_obj = User.objects.get(username=request.user.username)
+    seller = Seller.objects.get(user=user_obj, id_user=user_obj.id)
+    
     context = {
         'sellers_products': sellers_products,
+        'seller': seller,
     }
     return render(request, 'dashboard.html', context)
 
@@ -176,6 +181,9 @@ def logout(request, *args, **kwargs):
 
 def categories(request, *args, **kwargs):
     return render(request, 'catergories.html', {})
+
+def socials(request, *args, **kwargs):
+    return render(request, 'socials.html', {})
 
 # def jsstuff(request,  *args, **kwargs):
     

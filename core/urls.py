@@ -10,4 +10,5 @@ urlpatterns = [
     path('addproduct/', views.addproduct, name='addproduct'),
     path('logout/', views.logout, name='logout'),
     path('categories/', views.categories, name='categories'),
+    path('socials/', views.socials, name='socials'),
 ]

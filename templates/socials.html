@@ -1,14 +1,17 @@
+{% load static %}
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=
     , initial-scale=1.0">
     <title>Add Your Socials</title>
-    <link rel="stylesheet" href="bankform.css">
-    <link rel="stylesheet" href="socials.css">
-    <link rel="stylesheet" href="/fontawesome-free-5.15.3-web/CSS/ALL.CSS">
+    <link rel="stylesheet" href="{% static 'bankform.css' %}">
+    <link rel="stylesheet" href="{% static 'socials.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome-free-5.15.3-web/CSS/ALL.CSS' %}">
 </head>
+
 <body>
     <div class="container">
         <div class="form-box">
@@ -17,51 +20,49 @@
             </div>
             <h1>Add Your Socials</h1>
             <div class="form">
-               <label for=""><i class="fab fa-instagram"></i><input type="text" class="socialInput instaInput"></label>
-               <label for=""><i class="fab fa-whatsapp"></i><input type="text" class="socialInput whatsappInput"></label>
-               <label for=""><i class="fab fa-telegram"></i><input type="text" class="socialInput telegramInput"></label>
-               <button class="addSocials disable">Add</button>
-               <button class="skipBtn">Skip>></button>
+                <label for=""><i class="fab fa-instagram"></i><input type="text" class="socialInput instaInput"></label>
+                <label for=""><i class="fab fa-whatsapp"></i><input type="text" class="socialInput whatsappInput"></label>
+                <label for=""><i class="fab fa-telegram"></i><input type="text" class="socialInput telegramInput"></label>
+                <button class="addSocials disable">Add</button>
+                <button class="skipBtn">Skip>></button>
             </div>
         </div>
     </div>
     <script>
-
-
         const insta = document.querySelector('.instaInput')
         const inputs = document.querySelectorAll('.socialInput')
-        document.addEventListener('DOMContentLoaded', ()=>{
+        document.addEventListener('DOMContentLoaded', () => {
             // console.log(inputs)
             inputs.forEach(input => {
-                input.addEventListener('blur', ()=>{
+                input.addEventListener('blur', () => {
                     // let inputVal = input.value
                     let val = insta.value
-                    if(inputs[1].value == '' && inputs[2].value == '' && !val.startsWith('https://www.instagram.com/')){
+                    if (inputs[1].value == '' && inputs[2].value == '' && !val.startsWith('https://www.instagram.com/')) {
                         document.querySelector('.addSocials').classList.add('disable')
                         console.log('true')
                         document.querySelector('.error').classList.add('active')
-                            document.querySelector('.addSocials').classList.add('disable')
-                            setTimeout(function(){
+                        document.querySelector('.addSocials').classList.add('disable')
+                        setTimeout(function() {
                                 document.querySelector('.error').classList.remove('active')
                             }, 1400)
                             // console.log('false')
-                    }else{
+                    } else {
                         // console.log('false')
-                        if(!val.startsWith('https://www.instagram.com/') && val != '' && val != null){
+                        if (!val.startsWith('https://www.instagram.com/') && val != '' && val != null) {
                             document.querySelector('.addSocials').classList.add('disable')
                             document.querySelector('.error').classList.add('active')
                             document.querySelector('.addSocials').classList.add('disable')
-                            setTimeout(function(){
+                            setTimeout(function() {
                                 document.querySelector('.error').classList.remove('active')
                             }, 1400)
-                        }else{
+                        } else {
                             document.querySelector('.addSocials').classList.remove('disable')
                         }
                     }
                 })
             });
         })
-
     </script>
 </body>
+
 </html>

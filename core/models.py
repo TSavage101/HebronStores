@@ -24,6 +24,8 @@ class Seller(models.Model):
     acc_name = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=12)
     instagram = models.CharField(max_length=12)
+    telegram = models.CharField(max_length=12)
+    whatsapp = models.CharField(max_length=12)
     amount_earned = models.IntegerField(default = 0)
     no_of_sales = models.IntegerField(default = 0)
     no_of_products = models.IntegerField(default = 0)
@@ -59,8 +61,8 @@ class Product(models.Model):
     category = models.CharField(max_length=20, choices=TYPE, default="miscellaneous")
     sales = models.IntegerField(default=0)
     details = models.TextField(blank=True, null=True)
-    rating = models.IntegerField(default=3)
-    arating = models.DecimalField(default=3, max_digits=2, decimal_places=1)
+    rating = models.IntegerField(default=0)
+    arating = models.DecimalField(default=0, max_digits=2, decimal_places=1)
     quantity = models.IntegerField()
     feedback = models.TextField(blank=True, null=True)
     date = models.DateTimeField(default=datetime.now)
@@ -68,3 +70,20 @@ class Product(models.Model):
     
     def __str__(self):
         return f"{self.name} sold by {self.seller} "
+    
+class Review(models.Model):
+    user = models.CharField(max_length=200)
+    rating = models.IntegerField()
+    comment = models.TextField()
+    product = models.CharField(max_length=200)
+    
+    def __str__(self):
+        return f"{self.user} rated {self.product} {self.rating} stars"
+
+class CartItem(models.Model):
+    user = models.CharField(max_length=200)
+    item = models.CharField(max_length=200)
+    number = models.IntegerField()
+    
+    def __str__(self):
+        return f"{self.number} {self.item}s in {self.user}'s cart"
