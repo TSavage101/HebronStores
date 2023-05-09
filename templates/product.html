@@ -94,18 +94,20 @@
                 </div>
             </div>
             <div class="write-review-bg">
-                <div class="write-review">
-                    <span class="closeBtn"><i class="fas fa-times"></i></span>
-                    <div class="rate">
-                        <div class="star s1"></div>
-                        <div class="star s2"></div>
-                        <div class="star s3"></div>
-                        <div class="star s4"></div>
-                        <div class="star s5"></div>
+                <form id="">
+                    <div class="write-review">
+                        <span class="closeBtn"><i class="fas fa-times"></i></span>
+                        <div class="rate">
+                            <div class="star s1"></div>
+                            <div class="star s2"></div>
+                            <div class="star s3"></div>
+                            <div class="star s4"></div>
+                            <div class="star s5"></div>
+                        </div>
+                        <textarea name="" class="write" id="" cols="30" rows="10" placeholder="Tell Us Something(Optional)" style="padding: 10px;"></textarea>
+                        <button type="submit">Add Review</button>
                     </div>
-                    <textarea name="" class="write" id="" cols="30" rows="10" placeholder="Tell Us Something(Optional)"></textarea>
-                    <button>Add Review</button>
-                </div>
+                </form>
             </div>
         </div>
     </div>
@@ -119,20 +121,20 @@
         </div>
         <div class="contacts">
             <div class="contact">
+                <div class="text" style="float: right;">{{ seller.instagram }}</div>
                 <div class="logo"><i class="fab fa-instagram"></i></div>
-                <div class="text"></div>
             </div>
             <div class="contact">
+                <div class="text" style="float: right;">{{ seller.whatsapp }}</div>
                 <div class="logo"><i class="fab fa-whatsapp"></i></div>
-                <div class="text"></div>
             </div>
             <div class="contact">
+                <div class="text" style="float: right;">{{ seller.telegram }}</div>
                 <div class="logo"><i class="fab fa-telegram"></i></div>
-                <div class="text"></div>
             </div>
             <div class="contact">
+                <div class="text" style="float: right;">{{ user_obj.email }}</div>
                 <div class="logo"><i class="fas fa-envelope"></i></div>
-                <div class="text"></div>
             </div>
         </div>
     </div>
