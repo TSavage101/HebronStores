@@ -13,58 +13,58 @@ let newPrice = quantityNo * price
 document.querySelector('.no input').value = quantityNo
 document.querySelector('.pay').innerHTML = newPrice;
 
-minusBtn.addEventListener('click', ()=>{
-    if(quantityNo == 1){
+minusBtn.addEventListener('click', () => {
+    if (quantityNo == 1) {
 
-    }else{
+    } else {
         quantityNo -= 1
-        // console.log(quantityNo)
+            // console.log(quantityNo)
         document.querySelector('.no input').value = quantityNo
         newPrice = quantityNo * price
         document.querySelector('.pay').innerHTML = newPrice;
         document.querySelector('.buyBtn').classList.add('active');
-        setTimeout(function(){
+        setTimeout(function() {
             document.querySelector('.buyBtn').classList.remove('active');
         }, 800)
     }
 })
 
-addBtn.addEventListener('click', ()=>{
-    if(quantityNo == stockNo){
+addBtn.addEventListener('click', () => {
+    if (quantityNo == stockNo) {
         alert('Out Of Stock')
-    }else{
+    } else {
         quantityNo += 1
-        // console.log(quantityNo)
+            // console.log(quantityNo)
         document.querySelector('.no input').value = quantityNo
         newPrice = quantityNo * price
         document.querySelector('.pay').innerHTML = newPrice;
         document.querySelector('.buyBtn').classList.add('active');
         document.querySelector('.buyBtn').classList.add('active');
-        setTimeout(function(){
+        setTimeout(function() {
             document.querySelector('.buyBtn').classList.remove('active');
         }, 800)
     }
-    
+
 })
 
-addReview.addEventListener('click', ()=>{
+addReview.addEventListener('click', () => {
     document.querySelector('.write-review-bg').classList.add('active')
 })
 
-document.querySelector('.closeBtn').addEventListener('click', ()=>{
+document.querySelector('.closeBtn').addEventListener('click', () => {
     document.querySelector('.write-review-bg').classList.remove('active')
 })
 
-document.querySelector('.drop').addEventListener('click', ()=>{
+document.querySelector('.drop').addEventListener('click', () => {
     document.querySelector('.orderBtn').classList.toggle('visible')
     document.querySelector('.drop i').classList.toggle('visible')
 })
 
-sellerBtn.addEventListener('click', ()=>{
+sellerBtn.addEventListener('click', () => {
     sellerCard.classList.add('active')
 })
 
-closeSeller.addEventListener('click', ()=>{
+closeSeller.addEventListener('click', () => {
     sellerCard.classList.remove('active')
 })
 
@@ -74,9 +74,9 @@ closeSeller.addEventListener('click', ()=>{
 
 // console.log(stars)
 let rating
-stars.forEach(star =>{
-    star.addEventListener('click', ()=>{
-        if(star.classList.contains('s1')){
+stars.forEach(star => {
+    star.addEventListener('click', () => {
+        if (star.classList.contains('s1')) {
             rating = 1
             console.log(rating)
             stars[0].classList.add('bad-rating')
@@ -94,7 +94,7 @@ stars.forEach(star =>{
             stars[4].classList.remove('bad-rating')
             stars[4].classList.remove('mid-rating')
             stars[4].classList.remove('good-rating')
-        }else if(star.classList.contains('s2')){
+        } else if (star.classList.contains('s2')) {
             rating = 2
             console.log(rating)
             stars[0].classList.add('bad-rating')
@@ -112,7 +112,7 @@ stars.forEach(star =>{
             stars[4].classList.remove('bad-rating')
             stars[4].classList.remove('mid-rating')
             stars[4].classList.remove('good-rating')
-        }else if(star.classList.contains('s3')){
+        } else if (star.classList.contains('s3')) {
             rating = 3
             console.log(rating)
             stars[0].classList.remove('bad-rating')
@@ -130,7 +130,7 @@ stars.forEach(star =>{
             stars[4].classList.remove('bad-rating')
             stars[4].classList.remove('mid-rating')
             stars[4].classList.remove('good-rating')
-        }else if(star.classList.contains('s4')){
+        } else if (star.classList.contains('s4')) {
             rating = 4
             console.log(rating)
             stars[0].classList.remove('bad-rating')
@@ -148,7 +148,7 @@ stars.forEach(star =>{
             stars[4].classList.remove('bad-rating')
             stars[4].classList.remove('mid-rating')
             stars[4].classList.remove('good-rating')
-        }else if(star.classList.contains('s5')){
+        } else if (star.classList.contains('s5')) {
             rating = 5
             console.log(rating)
             stars[0].classList.remove('bad-rating')
@@ -167,5 +167,8 @@ stars.forEach(star =>{
             stars[4].classList.remove('mid-rating')
             stars[4].classList.add('good-rating')
         }
+
+        document.getElementById('rrr').setAttribute('value', rating)
+
     })
 })

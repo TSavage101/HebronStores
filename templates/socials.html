@@ -19,13 +19,15 @@
                 <p>Invalid Instagram Link!</p>
             </div>
             <h1>Add Your Socials</h1>
-            <div class="form">
-                <label for=""><i class="fab fa-instagram"></i><input type="text" class="socialInput instaInput"></label>
-                <label for=""><i class="fab fa-whatsapp"></i><input type="text" class="socialInput whatsappInput"></label>
-                <label for=""><i class="fab fa-telegram"></i><input type="text" class="socialInput telegramInput"></label>
-                <button class="addSocials disable">Add</button>
-                <button class="skipBtn">Skip>></button>
-            </div>
+            <form action="." method="POST"> {% csrf_token %}
+                <div class="form">
+                    <label for=""><i class="fab fa-instagram"></i><input type="text" class="socialInput instaInput" name="instagram"></label>
+                    <label for=""><i class="fab fa-whatsapp"></i><input type="text" class="socialInput whatsappInput" name="whatsapp"></label>
+                    <label for=""><i class="fab fa-telegram"></i><input type="text" class="socialInput telegramInput" name="telegram"></label>
+                    <button class="addSocials disable" type="submit">Add</button>
+                    <button class="skipBtn">Skip>></button>
+                </div>
+            </form>
         </div>
     </div>
     <script>

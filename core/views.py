@@ -7,7 +7,9 @@ from django.contrib import messages
 
 from django.contrib.auth.decorators import login_required
 
-from .models import Seller, Cart, Product
+from .models import Seller, Cart, Product, Review, CartItem
+
+import re
 
 # Create your views here.
 def home(request, *args, **kwargs):
@@ -79,13 +81,49 @@ def product(request, pk, *args, **kwargs):
     user_obj = User.objects.get(username=product.seller)
     seller = Seller.objects.get(id_user=user_obj.id, user=user_obj)
     
+    robj = Review.objects.filter(user=request.user.username, product=product.name).first
+    
     context = {
         'product': product,
         'user_obj': user_obj,
         'seller': seller,
+        'robj': robj,
     }
     
-    return render(request, 'product.html', context)
+    if request.method == 'POST':
+        if 'rating' in request.POST:
+            rating = request.POST['rating']
+            review = request.POST.get('review')
+            
+            if request.user.username == '':
+                messages.info('Please login to be able to rate and comment on product!')
+                return redirect('auth')
+            else:
+                if Review.objects.filter(user=request.user.username, product=product.name).exists():
+                    rev = Review.objects.get(user=request.user.username, product=product.name)
+                    rev.rating = rating
+                    rev.comment = review
+                    rev.save()
+                else:
+                    new_review = Review.objects.create(user=request.user.username, rating=rating, comment=review, product=product.name)
+                    new_review.save()
+                    
+                return HttpResponse('Done!!!')
+        
+        if 'number' in request.POST:
+            number = request.POST['number']
+            print(number)
+            
+            if request.user.username == '':
+                messages.info(request, "Please login to access your cart!")
+                return redirect('auth')
+            else:
+                new_cart_item = CartItem.objects.create(user=request.user.username, number=number, item=product.name)
+                new_cart_item.save()
+            
+            return HttpResponse('Done!')
+    else:
+        return render(request, 'product.html', context)
 
 @login_required(login_url='auth')
 def bankform(request, *args, **kwargs):
@@ -182,10 +220,31 @@ def logout(request, *args, **kwargs):
 def categories(request, *args, **kwargs):
     return render(request, 'catergories.html', {})
 
+@login_required(login_url='auth')
 def socials(request, *args, **kwargs):
-    return render(request, 'socials.html', {})
+    user_obj = User.objects.get(username=request.user.username)
+    seller = Seller.objects.get(user=user_obj, id_user=user_obj.id)
+    
+    if request.method == 'POST':
+        instagram = request.POST['instagram']
+        whatsapp = request.POST['whatsapp']
+        telegram = request.POST['telegram']
+        
+        ig = re.search(r"(?<=\.com\/)[^\/]+", instagram).group()
+        print(ig)
+        
+        seller.instagram = ig
+        seller.whatsapp = whatsapp
+        seller.telegram = telegram
+        seller.save()
+        
+        return redirect('home')
+    else: 
+        return render(request, 'socials.html', {})
 
-# def jsstuff(request,  *args, **kwargs):
+def jsstuff(request, prodid,  *args, **kwargs):
+    product = Product.objects.get(pk=prodid)
     
+    added = CartItem.objects.filter(user=request.user.username, item=product.name)
     
-#     return JsonResponse()
+    return JsonResponse({"added":list(added.values())})

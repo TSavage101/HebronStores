@@ -11,4 +11,5 @@ urlpatterns = [
     path('logout/', views.logout, name='logout'),
     path('categories/', views.categories, name='categories'),
     path('socials/', views.socials, name='socials'),
+    path('jsstuff/<int:prodid>', views.jsstuff, name='jsstuff'),
 ]
