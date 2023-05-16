@@ -80,6 +80,7 @@ def product(request, pk, *args, **kwargs):
     product = Product.objects.get(pk=pk)
     user_obj = User.objects.get(username=product.seller)
     seller = Seller.objects.get(id_user=user_obj.id, user=user_obj)
+    all_reviews = Review.objects.filter(product=product.name)
     
     robj = Review.objects.filter(user=request.user.username, product=product.name).first
     
@@ -88,6 +89,7 @@ def product(request, pk, *args, **kwargs):
         'user_obj': user_obj,
         'seller': seller,
         'robj': robj,
+        'all_reviews': all_reviews,
     }
     
     if request.method == 'POST':
@@ -105,10 +107,14 @@ def product(request, pk, *args, **kwargs):
                     rev.comment = review
                     rev.save()
                 else:
-                    new_review = Review.objects.create(user=request.user.username, rating=rating, comment=review, product=product.name)
-                    new_review.save()
+                    if rating != '':
+                        new_review = Review.objects.create(user=request.user.username, rating=rating, comment=review, product=product.name)
+                        new_review.save()
+                    else:
+                        messages.info(request, "Please rate!!!")
+                        return redirect('./' + str(pk))
                     
-                return HttpResponse('Done!!!')
+                return redirect('./' + str(pk))
         
         if 'number' in request.POST:
             number = request.POST['number']

@@ -75,9 +75,51 @@
                     <button class="plus">+</button>
                 </div>
                 <div class="reviews">
-                    <div class="review-overflow">
-                        <div class="all-reviews">
-                            no reviews
+                    <div class="review-overflow" style="overflow: scroll;">
+                        <div class="all-reviews" >
+                            {% if all_reviews|length > 0 %}
+                              {% for review in all_reviews %}
+                                <h3 style="color: #3c3c3c;">{{ review.user }}</h3>
+                                <div class="" style="color: #b82b84; font-size: smaller;">
+                                    {% if review.rating == 1 %}
+                                        <i class="fa fa-star" ></i>
+                                        <i class="far fa-star" ></i>
+                                        <i class="far fa-star" ></i>
+                                        <i class="far fa-star" ></i>
+                                        <i class="far fa-star" ></i>
+                                    {% endif %}
+                                    {% if review.rating == 2 %}
+                                        <i class="fa fa-star" ></i>
+                                        <i class="fa fa-star" ></i>
+                                        <i class="far fa-star" ></i>
+                                        <i class="far fa-star" ></i>
+                                        <i class="far fa-star" ></i>
+                                    {% endif %} 
+                                    {% if review.rating == 3 %}
+                                        <i class="fa fa-star" ></i>
+                                        <i class="fa fa-star" ></i>
+                                        <i class="fa fa-star" ></i>
+                                        <i class="far fa-star" ></i>
+                                        <i class="far fa-star" ></i>
+                                    {% endif %} 
+                                    {% if review.rating == 4 %}
+                                        <i class="fa fa-star" ></i>
+                                        <i class="fa fa-star" ></i>
+                                        <i class="fa fa-star" ></i>
+                                        <i class="fa fa-star" ></i>
+                                        <i class="far fa-star" ></i>
+                                    {% endif %} 
+                                    {% if review.rating == 5 %}
+                                        <i class="fa fa-star" ></i>
+                                        <i class="fa fa-star" ></i>
+                                        <i class="fa fa-star" ></i>
+                                        <i class="fa fa-star" ></i>
+                                        <i class="fa fa-star" ></i>
+                                    {% endif %}
+                                    </div>
+                                <p style="color: #555555;">{{ review.comment }}</p><br>
+                              {% endfor %}
+                            {% endif %}
                         </div>
                     </div>
                     <button class="addReview"><i class="fas fa-pen"></i>Add a Review</button>
@@ -90,21 +132,21 @@
                         <button class="buyBtn">Buy <div class="currency">N</div><div class="pay"></div></button>
                         <button class="orderBtn">Pay On Deilivery</button>
                     </div>
-                    
+
                     <div class="button">
                         <form id="addtocart">
-                        <input type="hidden" name="atc" />
-                        <div id="adrbtn">
-                        <!-- <button class="cartBtn" type="submit"><i class="fas fa-plus"></i> Add to Cart</button> -->
-                        </div>
+                            <input type="hidden" name="atc" />
+                            <div id="adrbtn">
+
+                            </div>
                         </form>
                     </div>
 
                 </div>
             </div>
             <div class="write-review-bg">
-                <form id="reviewform"> {% csrf_token %}
-                    < class="write-review">
+                <form id="" action="" method="POST"> {% csrf_token %}
+                    <div class="write-review">
                         <span class="closeBtn"><i class="fas fa-times"></i></span>
                         <div class="rate">
                             <div class="star s1"></div>
@@ -113,7 +155,7 @@
                             <div class="star s4"></div>
                             <div class="star s5"></div>
                         </div>
-                        <input type="hidden" value="{{ robj.rating }}" id="rrr" />
+                        <input type="hidden" name="rating" value="{{ robj.rating }}" id="rrr" />
                         <textarea name="review" type="" class="write" id="review" cols="30" rows="10" placeholder="Tell Us Something(Optional)" style="padding: 10px;">{{ robj.comment }}</textarea>
                         <button type="submit">Add Review</button>
                     </div>
@@ -190,25 +232,6 @@
     <script src="{% static '/buyproduct.js' %}"></script>
 </body>
 <script>
-    $(document).on('submit', '#reviewform', function(e) {
-        e.preventDefault();
-
-        $.ajax({
-            type: 'POST',
-            url: "{% url 'product' product.pk  %}",
-            data: {
-                rating: $('#rrr').val(),
-                review: $('#review').val(),
-                csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
-            },
-            success: function(data) {
-                alert("Thanks for the Feedback!!!")
-            },
-            error: function(data) {
-                alert("Something went wrong!!!")
-            }
-        });
-    });
 
     $(document).on('submit', '#addtocart', function(e) {
         e.preventDefault();
@@ -230,30 +253,30 @@
         });
     });
 
-    $(document).ready(function(){
+    $(document).ready(function() {
 
-	setInterval(function(){
-		$.ajax({
-			type: 'GET',
-			url: "{% url 'jsstuff' product.pk %}",
-			success: function(response) {
-				// console.log(response);
-				$("#adrbtn").empty();
-				if (response.added.length == 0)
-				{
-					var temp = '<button class="cartBtn"><i class="fas fa-plus"></i> Add to Cart</button>';
-				} else {
-                    var temp = '<button class="cartBtn" disabled style="background: grey"> Added to Cart</button>';
-                }
-                $("#adrbtn").append(temp);
-			},
-			error: function(response) {
-				alert("An error occured when getting your data!!!")
-			},
-		});
-	}, 1000);
+        setInterval(function() {
+            $.ajax({
+                type: 'GET',
+                url: "{% url 'jsstuff' product.pk %}",
+                success: function(response) {
+                    // console.log(response);
+                    $("#adrbtn").empty();
+                    if (response.added.length == 0) {
+                        var temp = '<button class="cartBtn"><i class="fas fa-plus"></i> Add to Cart</button>';
+                    } else {
+                        var temp = '<button class="cartBtn" disabled style="background: grey"> Added to Cart</button>';
+                    }
+                    $("#adrbtn").append(temp);
+                },
+                error: function(response) {
+                    alert("An error occured when getting your data!!!")
+                },
+            });
+        }, 1000);
 
-});
+    });
+
 </script>
 
 </html>
