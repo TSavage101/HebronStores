@@ -7,6 +7,8 @@ from django.contrib import messages
 
 from django.contrib.auth.decorators import login_required
 
+from django.db.models import Avg, Sum
+
 from .models import Seller, Cart, Product, Review, CartItem
 
 import re
@@ -126,6 +128,9 @@ def product(request, pk, *args, **kwargs):
             else:
                 new_cart_item = CartItem.objects.create(user=request.user.username, number=number, item=product.name)
                 new_cart_item.save()
+                user_cart = Cart.objects.get(user=user_obj)
+                user_cart.no_in_cart += 1
+                user_cart.save()
             
             return HttpResponse('Done!')
     else:

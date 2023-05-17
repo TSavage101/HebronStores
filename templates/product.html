@@ -76,50 +76,38 @@
                 </div>
                 <div class="reviews">
                     <div class="review-overflow" style="overflow: scroll;">
-                        <div class="all-reviews" >
-                            {% if all_reviews|length > 0 %}
-                              {% for review in all_reviews %}
-                                <h3 style="color: #3c3c3c;">{{ review.user }}</h3>
-                                <div class="" style="color: #b82b84; font-size: smaller;">
-                                    {% if review.rating == 1 %}
-                                        <i class="fa fa-star" ></i>
-                                        <i class="far fa-star" ></i>
-                                        <i class="far fa-star" ></i>
-                                        <i class="far fa-star" ></i>
-                                        <i class="far fa-star" ></i>
-                                    {% endif %}
-                                    {% if review.rating == 2 %}
-                                        <i class="fa fa-star" ></i>
-                                        <i class="fa fa-star" ></i>
-                                        <i class="far fa-star" ></i>
-                                        <i class="far fa-star" ></i>
-                                        <i class="far fa-star" ></i>
-                                    {% endif %} 
-                                    {% if review.rating == 3 %}
-                                        <i class="fa fa-star" ></i>
-                                        <i class="fa fa-star" ></i>
-                                        <i class="fa fa-star" ></i>
-                                        <i class="far fa-star" ></i>
-                                        <i class="far fa-star" ></i>
-                                    {% endif %} 
-                                    {% if review.rating == 4 %}
-                                        <i class="fa fa-star" ></i>
-                                        <i class="fa fa-star" ></i>
-                                        <i class="fa fa-star" ></i>
-                                        <i class="fa fa-star" ></i>
-                                        <i class="far fa-star" ></i>
-                                    {% endif %} 
-                                    {% if review.rating == 5 %}
-                                        <i class="fa fa-star" ></i>
-                                        <i class="fa fa-star" ></i>
-                                        <i class="fa fa-star" ></i>
-                                        <i class="fa fa-star" ></i>
-                                        <i class="fa fa-star" ></i>
-                                    {% endif %}
-                                    </div>
-                                <p style="color: #555555;">{{ review.comment }}</p><br>
-                              {% endfor %}
-                            {% endif %}
+                        <div class="all-reviews">
+                            {% if all_reviews|length > 0 %} {% for review in all_reviews %}
+                            <h3 style="color: #3c3c3c;">{{ review.user }}</h3>
+                            <div class="" style="color: #b82b84; font-size: smaller;">
+                                {% if review.rating == 1 %}
+                                <i class="fa fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i> {% endif %} {% if review.rating == 2 %}
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i> {% endif %} {% if review.rating == 3 %}
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i> {% endif %} {% if review.rating == 4 %}
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="far fa-star"></i> {% endif %} {% if review.rating == 5 %}
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i> {% endif %}
+                            </div>
+                            <p style="color: #555555;">{{ review.comment }}</p><br> {% endfor %} {% endif %}
                         </div>
                     </div>
                     <button class="addReview"><i class="fas fa-pen"></i>Add a Review</button>
@@ -232,7 +220,6 @@
     <script src="{% static '/buyproduct.js' %}"></script>
 </body>
 <script>
-
     $(document).on('submit', '#addtocart', function(e) {
         e.preventDefault();
 
@@ -265,18 +252,17 @@
                     if (response.added.length == 0) {
                         var temp = '<button class="cartBtn"><i class="fas fa-plus"></i> Add to Cart</button>';
                     } else {
-                        var temp = '<button class="cartBtn" disabled style="background: grey"> Added to Cart</button>';
+                        var temp = '<button class="cartBtn" disabled style="background: grey;"> Added to Cart</button>';
                     }
                     $("#adrbtn").append(temp);
                 },
                 error: function(response) {
-                    alert("An error occured when getting your data!!!")
+
                 },
             });
         }, 1000);
 
     });
-
 </script>
 
 </html>
